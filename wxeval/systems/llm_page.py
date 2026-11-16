@@ -45,4 +45,4 @@ class LLMPerPage(System):
             data = json.loads(reply.text)
             return data["records"], data["next_page_url"]
 
-        return crawl(task.start_url, ctx.fetcher, page)
+        return crawl(task.start_url, ctx, page)

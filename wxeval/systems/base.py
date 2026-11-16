@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+import re
 from abc import ABC, abstractmethod
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, ClassVar
 from urllib.parse import urljoin
+
+from parsel import Selector
 
 from ..fetch import Fetcher
 from ..llm import Claude, Ledger
@@ -28,6 +31,7 @@ class Context:
     claude: Claude | None
     workdir: Path  # per system folder for artifacts such as generated code
     cache_dir: Path  # for adapters that cache tool output themselves
+    errors: list[str] = field(default_factory=list)  # page level errors of the current run
 
 
 class System(ABC):
@@ -48,17 +52,39 @@ class System(ABC):
 PageFn = Callable[[str, str], tuple[list[dict[str, Any]], str | None]]
 
 
-def crawl(start_url: str, fetcher: Fetcher, page_fn: PageFn,
+def next_link(html: str) -> str | None:
+    """Generic rule: a link with rel=next or text starting with "next"."""
+    sel = Selector(html)
+    for a in sel.css("a[href]"):
+        text = " ".join(a.css("::text").getall()).strip().lower()
+        if a.attrib.get("rel") == "next" or re.match(r"^next\b", text):
+            return a.attrib["href"]
+    return None
+
+
+def crawl(start_url: str, ctx: Context, page_fn: PageFn, fallback_next: bool = False,
           max_pages: int = MAX_PAGES) -> list[dict[str, Any]]:
-    """Follow next links. page_fn gets (html, url) and returns (records, next_url)."""
+    """Follow next links. page_fn gets (html, url) and returns (records, next_url).
+
+    Code based systems get fallback_next: when they find no next link, the generic rule
+    is tried. A page that fails stops the crawl but keeps the records found so far.
+    """
     records: list[dict[str, Any]] = []
     seen: set[str] = set()
     url: str | None = start_url
     while url and url not in seen and len(seen) < max_pages:
         seen.add(url)
-        html = fetcher.get(url)
-        found, nxt = page_fn(html, url)
+        try:
+            html = ctx.fetcher.get(url)
+            found, nxt = page_fn(html, url)
+        except Exception as exc:
+            if type(exc).__name__ == "BudgetExceeded":
+                raise
+            ctx.errors.append(f"{url}: {type(exc).__name__}: {str(exc)[:200]}")
+            break
         records.extend(found)
+        if not nxt and fallback_next:
+            nxt = next_link(html)
         url = urljoin(url, nxt) if nxt else None
     return dedupe(records)
 

@@ -62,4 +62,4 @@ class Handwritten(System):
 
     def extract(self, task: Task, ctx: Context) -> list[dict[str, Any]]:
         page_fn = shop_page if task.kind == "shop" else jobs_page
-        return crawl(task.start_url, ctx.fetcher, page_fn)
+        return crawl(task.start_url, ctx, page_fn, fallback_next=True)

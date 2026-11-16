@@ -125,7 +125,7 @@ class DiskCache:
 
 class Claude:
     def __init__(self, cache: DiskCache, ledger: Ledger, model: str = MODEL,
-                 effort: str = "low") -> None:
+                 effort: str | None = None) -> None:
         self.cache = cache
         self.ledger = ledger
         self.model = model
@@ -156,10 +156,14 @@ class Claude:
             "model": self.model, "max_tokens": max_tokens, "system": system,
             "messages": [{"role": "user", "content": user}],
         }
-        config: dict[str, Any] = {"effort": self.effort}
+        # Effort is left at the model default unless set, as the tool adapters do.
+        config: dict[str, Any] = {}
+        if self.effort is not None:
+            config["effort"] = self.effort
         if schema is not None:
             config["format"] = {"type": "json_schema", "schema": schema}
-        kwargs["output_config"] = config
+        if config:
+            kwargs["output_config"] = config
         start = time.perf_counter()
         with self._client.messages.stream(**kwargs) as stream:
             msg = stream.get_final_message()

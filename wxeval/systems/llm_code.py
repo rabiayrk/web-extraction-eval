@@ -28,8 +28,9 @@ SYSTEM = (
 
 
 def run_code(code_path: Path, html: str, url: str, timeout: int = 60) -> dict[str, Any]:
+    # Run in the code's own folder so relative paths cannot reach the ground truth.
     proc = subprocess.run(
-        [sys.executable, "-I", str(RUNNER), str(code_path)],
+        [sys.executable, "-I", str(RUNNER), str(code_path.resolve())], cwd=code_path.parent,
         input=json.dumps({"html": html, "url": url}), capture_output=True, text=True,
         timeout=timeout,
     )
@@ -84,11 +85,7 @@ class LLMWrittenCode(System):
         path = self.code[task.kind]
 
         def page(html: str, url: str) -> tuple[list[dict[str, Any]], str | None]:
-            try:
-                out = run_code(path, html, url)
-            except (RuntimeError, ValueError, subprocess.TimeoutExpired):
-                # Generated code that crashes on a page yields nothing for that page.
-                return [], None
+            out = run_code(path, html, url)
             return list(out.get("records") or []), out.get("next_url")
 
-        return crawl(task.start_url, ctx.fetcher, page)
+        return crawl(task.start_url, ctx, page, fallback_next=True)

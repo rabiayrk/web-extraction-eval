@@ -74,19 +74,29 @@ class ScrapeGraphSmart(System):
                 usage = _Usage()
                 # The key comes from ANTHROPIC_API_KEY.
                 llm = ChatAnthropic(  # type: ignore[call-arg]
-                    model_name=MODEL, max_tokens_to_sample=16000, callbacks=[_callback(usage)])
+                    model_name=MODEL, max_tokens_to_sample=16000, max_retries=4,
+                    callbacks=[_callback(usage)])
                 config = {"llm": {"model_instance": llm, "model_tokens": 200_000},
                           "verbose": False, "headless": True}
                 start = time.perf_counter()
                 graph = SmartScraperGraph(prompt=prompt, source=html, config=config,
                                           schema=model)
-                answer = graph.run()
+                try:
+                    answer = graph.run()
+                except Exception:
+                    ctx.ledger.record(self.name, MODEL, usage.input_tokens, usage.output_tokens,
+                                      price(MODEL, usage.input_tokens, usage.output_tokens),
+                                      time.perf_counter() - start, cached=False)
+                    raise
                 hit = {"answer": answer, "in": usage.input_tokens, "out": usage.output_tokens,
                        "seconds": time.perf_counter() - start}
                 hit["cost"] = price(MODEL, hit["in"], hit["out"])
-                cache.put(key, hit)
                 ctx.ledger.record(self.name, MODEL, hit["in"], hit["out"], hit["cost"],
                                   hit["seconds"], cached=False)
+                if not isinstance(answer, dict) or "error" in answer:
+                    # Failed answers are paid for but never cached.
+                    raise RuntimeError(f"ScrapeGraphAI returned {str(answer)[:200]}")
+                cache.put(key, hit)
             else:
                 ctx.ledger.record(self.name, MODEL, hit["in"], hit["out"], hit["cost"],
                                   hit["seconds"], cached=True)
@@ -96,4 +106,4 @@ class ScrapeGraphSmart(System):
             records = [r for r in answer.get("records") or [] if isinstance(r, dict)]
             return records, answer.get("next_page_url")
 
-        return crawl(task.start_url, ctx.fetcher, page)
+        return crawl(task.start_url, ctx, page)
