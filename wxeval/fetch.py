@@ -25,11 +25,13 @@ class FetchStats:
 
 
 class Fetcher:
-    def __init__(self, mode: str = "browser", max_rounds: int = 30) -> None:
+    def __init__(self, mode: str = "browser", max_rounds: int = 30,
+                 pause_ms: int = 150) -> None:
         if mode not in ("http", "browser"):
             raise ValueError(mode)
         self.mode = mode
         self.max_rounds = max_rounds
+        self.pause_ms = pause_ms
         self.stats = FetchStats()
         self._client = httpx.Client(headers={"User-Agent": USER_AGENT}, timeout=30,
                                     follow_redirects=True)
@@ -73,7 +75,7 @@ class Fetcher:
                     page.mouse.wheel(0, 20000)
                     page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
                 page.wait_for_load_state("networkidle")
-                page.wait_for_timeout(150)
+                page.wait_for_timeout(self.pause_ms)
                 if size == last and not button.count():
                     break
                 last = size

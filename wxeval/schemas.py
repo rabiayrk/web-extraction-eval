@@ -61,3 +61,9 @@ JOBS = Schema("job posting", (
 ))
 
 SCHEMAS = {"shop": SHOP, "jobs": JOBS}
+
+QUOTES = Schema("quote", (
+    Field("text", "string", "the quote text without surrounding quotation marks"),
+    Field("author", "string", "author name"),
+    Field("tags", "string", "tags joined with a comma and a space, in page order"),
+))
