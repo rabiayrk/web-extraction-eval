@@ -85,24 +85,29 @@ def make_shop(seed: int, n: int = 60, twin_share: float = 0.15,
               missing_rate: float = 0.15) -> Dataset:
     rng = random.Random(f"shop-{seed}")
     used: set[str] = set()
-    records: list[dict[str, Any]] = []
+    units: list[list[dict[str, Any]]] = []
     twins: dict[str, int] = {}
     group = 0
-    while len(records) < n:
+    count = 0
+    while count < n:
         rec = _product(rng, used, missing_rate)
-        records.append(rec)
-        if len(records) < n and rng.random() < twin_share:
+        unit = [rec]
+        if count + 1 < n and rng.random() < twin_share:
             # Same product name in another color: a distinct record that looks like a copy.
             twin = dict(rec)
             twin["sku"] = _unique_code(rng, "SKU", used)
             twin["color"] = rng.choice([c for c in COLORS if c != rec["color"]])
             twin["price"] = round(rec["price"] * rng.choice([1.0, 1.0, 1.05, 0.95]), 2)
             twin["in_stock"] = rng.random() < 0.8
-            records.append(twin)
+            unit.append(twin)
             twins[rec["sku"]] = group
             twins[twin["sku"]] = group
             group += 1
-    rng.shuffle(records)
+        units.append(unit)
+        count += len(unit)
+    # Shuffle whole units so twins stay next to each other, as color variants usually do.
+    rng.shuffle(units)
+    records = [r for unit in units for r in unit]
     return Dataset("shop", records, twins)
 
 
