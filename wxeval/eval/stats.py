@@ -32,3 +32,27 @@ def paired_bootstrap(a: Sequence[float], b: Sequence[float], n_boot: int = 2000,
     other_side = means <= 0 if diff.mean() >= 0 else means >= 0
     p = 2 * float(other_side.mean())
     return float(diff.mean()), float(lo), float(hi), min(1.0, p)
+
+
+def sign_flip_test(diffs: Sequence[float]) -> float:
+    """Exact two-sided paired permutation test over all sign patterns."""
+    arr = np.asarray(diffs, dtype=float)
+    n = len(arr)
+    if n == 0 or n > 20:
+        raise ValueError("needs 1 to 20 paired units")
+    observed = abs(arr.mean())
+    signs = np.array(np.meshgrid(*[[-1.0, 1.0]] * n)).reshape(n, -1).T
+    means = np.abs((signs * arr).mean(axis=1))
+    return float((means >= observed - 1e-12).mean())
+
+
+def holm(pvalues: Sequence[float]) -> list[float]:
+    """Holm adjusted p-values, in the input order."""
+    order = np.argsort(pvalues)
+    m = len(pvalues)
+    adjusted = [0.0] * m
+    running = 0.0
+    for rank, idx in enumerate(order):
+        running = max(running, (m - rank) * pvalues[idx])
+        adjusted[idx] = min(1.0, running)
+    return adjusted

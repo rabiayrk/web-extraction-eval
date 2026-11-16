@@ -148,3 +148,12 @@ def test_strict_mode_rejects_text_values():
     assert evaluate(pred, gold, SHOP, "sku").fields.f1 == 1.0
     strict = evaluate(pred, gold, SHOP, "sku", strict=True)
     assert strict.fields.tp == 5
+
+
+def test_sign_flip_and_holm():
+    from wxeval.eval.stats import holm, sign_flip_test
+
+    # All six differences positive: only 2 of 64 sign patterns are as extreme.
+    assert sign_flip_test([0.1, 0.2, 0.3, 0.1, 0.2, 0.4]) == pytest.approx(2 / 64)
+    assert sign_flip_test([0.1, -0.1]) == 1.0
+    assert holm([0.01, 0.04, 0.03]) == pytest.approx([0.03, 0.06, 0.06])
