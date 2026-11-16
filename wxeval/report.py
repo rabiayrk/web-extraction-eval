@@ -1,17 +1,28 @@
-"""Score raw outputs against ground truth and write the result tables."""
+"""Score raw outputs against ground truth and write the result tables.
+
+The unit for intervals and tests is a site instance cluster: one (site kind, seed) pair.
+All variants of a cluster share the same underlying records, so they are averaged inside
+the cluster first and only clusters are resampled.
+"""
 
 from __future__ import annotations
 
 import csv
 import json
 from collections import defaultdict
+from collections.abc import Callable, Iterable
 from pathlib import Path
 from typing import Any
 
 from .eval.metrics import Counts, evaluate, freshness
-from .eval.stats import bootstrap_ci, paired_bootstrap
+from .eval.stats import bootstrap_ci, holm, paired_bootstrap, sign_flip_test
 from .schemas import SCHEMAS
 from .sites.variants import VARIANTS
+
+LAYOUT = ["layout_b", "hashed_classes", "deep_wrap", "redesign"]
+LOADING = ["next_only", "load_more", "infinite", "csr"]
+
+Row = dict[str, Any]
 
 
 def load_truth(build: Path, kind: str, variant: str, seed: int) -> dict[str, Any]:
@@ -20,28 +31,32 @@ def load_truth(build: Path, kind: str, variant: str, seed: int) -> dict[str, Any
     return data
 
 
-def score_runs(raw: Path, build: Path) -> list[dict[str, Any]]:
+def score_runs(raw: Path, build: Path) -> list[Row]:
     rows = []
     for path in sorted(raw.glob("*/*/*/s*.json")):
         run = json.loads(path.read_text())
         truth = load_truth(build, run["kind"], run["variant"], run["seed"])
         schema = SCHEMAS[run["kind"]]
-        res = evaluate(run["records"], truth["records"], schema, truth["key"], truth["twins"])
+        res = evaluate(run["records"], truth["records"], schema, truth["key"], truth["twins"],
+                       truth.get("page_of"))
+        strict = evaluate(run["records"], truth["records"], schema, truth["key"], strict=True)
         llm = run["llm"]
-        row = {
+        rows.append({
             "system": run["system"], "kind": run["kind"], "variant": run["variant"],
             "group": VARIANTS[run["variant"]].group, "seed": run["seed"],
-            **res.summary(),
+            **res.summary(), "strict_f1": strict.fields.f1,
+            "duplicates": res.duplicates, "twin_total": res.twin_total,
+            "twin_lost": res.twin_lost,
             "requests": run["fetch"]["requests"], "pages": run["fetch"]["pages"],
             "llm_calls": llm["calls"], "input_tokens": llm["input_tokens"],
             "output_tokens": llm["output_tokens"], "cost_usd": llm["cost"],
             "seconds": run["nominal_seconds"], "error": run["error"] or "",
-        }
-        rows.append(row)
+            "page_errors": len(run.get("page_errors") or []),
+        })
     return rows
 
 
-def score_freshness(raw: Path, build: Path) -> list[dict[str, Any]]:
+def score_freshness(raw: Path, build: Path) -> list[Row]:
     rows = []
     for v2_path in sorted(raw.glob("*/*/fresh_v2/s*.json")):
         v1_path = v2_path.parent.parent / "base" / v2_path.name
@@ -60,7 +75,7 @@ def score_freshness(raw: Path, build: Path) -> list[dict[str, Any]]:
     return rows
 
 
-def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
+def write_csv(path: Path, rows: list[Row]) -> None:
     if not rows:
         return
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -73,60 +88,85 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 def fmt(ci: tuple[float, float, float], digits: int = 2) -> str:
     mean, lo, hi = ci
+    if mean != mean:
+        return "n/a"
     return f"{mean:.{digits}f} [{lo:.{digits}f}, {hi:.{digits}f}]"
 
 
-def summarize(rows: list[dict[str, Any]], fresh: list[dict[str, Any]],
-              prep: dict[str, dict[str, float]]) -> tuple[str, list[dict[str, Any]]]:
-    """Main table. Means over site instances (kind x seed), 95% bootstrap intervals."""
-    by_sys: dict[str, list[dict[str, Any]]] = defaultdict(list)
+def clusters(rows: Iterable[Row], value: Callable[[list[Row]], float | None]) -> list[float]:
+    """One value per (kind, seed) cluster; clusters where value returns None are skipped."""
+    groups: dict[tuple[str, int], list[Row]] = defaultdict(list)
+    for r in rows:
+        groups[(r["kind"], r["seed"])].append(r)
+    out = []
+    for key in sorted(groups):
+        v = value(groups[key])
+        if v is not None:
+            out.append(v)
+    return out
+
+
+def mean_of(field: str) -> Callable[[list[Row]], float | None]:
+    def f(rs: list[Row]) -> float | None:
+        return sum(r[field] for r in rs) / len(rs) if rs else None
+    return f
+
+
+def ratio(num: str, den: str) -> Callable[[list[Row]], float | None]:
+    def f(rs: list[Row]) -> float | None:
+        d = sum(r[den] for r in rs)
+        return sum(r[num] for r in rs) / d if d else None
+    return f
+
+
+def summarize(rows: list[Row], fresh: list[Row],
+              prep: dict[str, dict[str, float]]) -> tuple[str, str]:
+    by_sys: dict[str, list[Row]] = defaultdict(list)
     for r in rows:
         by_sys[r["system"]].append(r)
-    fresh_by: dict[str, list[float]] = defaultdict(list)
-    for r in fresh:
-        fresh_by[r["system"]].append(r["change_f1"])
-
-    table = []
-    lines = ["| System | Field F1 (base) | Coverage (pagination + JS) | Field F1 after "
-             "redesign | Duplicate rate | Merge rate | Change F1 | USD per 1k records | "
-             "Requests per record | Seconds per record |",
-             "|---|---|---|---|---|---|---|---|---|---|"]
+    main = ["| System | Field F1, base | Coverage, loading variants | Field F1, layout "
+            "variants | Field F1, redesign | USD per 1k records |",
+            "|---|---|---|---|---|---|"]
+    extra = ["| System | Field F1, base, strict types | Duplicate rate | Wrong merge rate | "
+             "Change F1 (freshness) | Setup USD | Requests per record | Seconds per record |",
+             "|---|---|---|---|---|---|---|---|"]
     for system in sorted(by_sys):
         rs = by_sys[system]
-        base = [r["field_f1"] for r in rs if r["variant"] == "base"]
-        cov = [r["coverage"] for r in rs if r["group"] in ("pagination", "rendering")]
-        redesign = [r["field_f1"] for r in rs if r["variant"] == "redesign"]
-        dup = [r["duplicate_rate"] for r in rs]
-        merge = [r["merge_rate"] for r in rs if r["variant"] != "fresh_v2"]
+
+        def sel(names: list[str], rs: list[Row] = rs) -> list[Row]:
+            return [r for r in rs if r["variant"] in names]
+
+        base = bootstrap_ci(clusters(sel(["base"]), mean_of("field_f1")))
+        strict = bootstrap_ci(clusters(sel(["base"]), mean_of("strict_f1")))
+        cov = bootstrap_ci(clusters(sel(LOADING), mean_of("coverage")))
+        layout = bootstrap_ci(clusters(sel(LAYOUT), mean_of("field_f1")))
+        redesign = bootstrap_ci(clusters(sel(["redesign"]), mean_of("field_f1")))
+        # Rates only over runs that found something, so empty output does not look clean.
+        found = [r for r in rs if r["matched"] > 0]
+        dup = bootstrap_ci(clusters(found, ratio("duplicates", "n_pred")))
+        merge = bootstrap_ci(clusters(found, ratio("twin_lost", "twin_total")))
+        change = bootstrap_ci(clusters([f for f in fresh if f["system"] == system],
+                                       mean_of("change_f1")))
         matched = sum(r["matched"] for r in rs)
-        cost = sum(r["cost_usd"] for r in rs) + prep.get(system, {}).get("cost", 0.0)
-        reqs = sum(r["requests"] for r in rs)
-        secs = sum(r["seconds"] for r in rs) + prep.get(system, {}).get("seconds", 0.0)
+        cost = sum(r["cost_usd"] for r in rs)
         per_k = 1000 * cost / matched if matched else float("nan")
-        row: dict[str, Any] = {
-            "system": system,
-            "base_f1": bootstrap_ci(base), "coverage": bootstrap_ci(cov),
-            "redesign_f1": bootstrap_ci(redesign), "duplicate_rate": bootstrap_ci(dup),
-            "merge_rate": bootstrap_ci(merge), "change_f1": bootstrap_ci(fresh_by[system]),
-            "usd_per_1k": per_k, "requests_per_record": reqs / matched if matched else 0,
-            "seconds_per_record": secs / matched if matched else 0,
-        }
-        table.append(row)
-        lines.append(
-            f"| {system} | {fmt(row['base_f1'])} | {fmt(row['coverage'])} | "
-            f"{fmt(row['redesign_f1'])} | {fmt(row['duplicate_rate'], digits=3)} | "
-            f"{fmt(row['merge_rate'], digits=3)} | {fmt(row['change_f1'])} | "
-            f"{per_k:.3f} | {row['requests_per_record']:.2f} | "
-            f"{row['seconds_per_record']:.3f} |")
-    return "\n".join(lines) + "\n", table
+        setup = prep.get(system, {}).get("cost", 0.0)
+        reqs = sum(r["requests"] for r in rs) / matched if matched else float("nan")
+        secs = sum(r["seconds"] for r in rs) / matched if matched else float("nan")
+        main.append(f"| {system} | {fmt(base)} | {fmt(cov)} | {fmt(layout)} | "
+                    f"{fmt(redesign)} | {per_k:.3f} |")
+        extra.append(f"| {system} | {fmt(strict)} | {fmt(dup, 3)} | {fmt(merge, 3)} | "
+                     f"{fmt(change)} | {setup:.4f} | {reqs:.2f} | {secs:.3f} |")
+    return "\n".join(main) + "\n", "\n".join(extra) + "\n"
 
 
-def variant_table(rows: list[dict[str, Any]]) -> tuple[str, dict[str, dict[str, float]]]:
+def variant_table(rows: list[Row],
+                  kind: str | None = None) -> tuple[str, dict[str, dict[str, float]]]:
+    rows = [r for r in rows if kind is None or r["kind"] == kind]
     systems = sorted({r["system"] for r in rows})
     variants = [v for v in VARIANTS if any(r["variant"] == v for r in rows)]
     grid: dict[str, dict[str, float]] = {s: {} for s in systems}
-    head = "| Variant | " + " | ".join(systems) + " |"
-    lines = [head, "|---" * (len(systems) + 1) + "|"]
+    lines = ["| Variant | " + " | ".join(systems) + " |", "|---" * (len(systems) + 1) + "|"]
     for v in variants:
         cells = []
         for s in systems:
@@ -138,8 +178,7 @@ def variant_table(rows: list[dict[str, Any]]) -> tuple[str, dict[str, dict[str, 
     return "\n".join(lines) + "\n", grid
 
 
-def per_field_table(rows: list[dict[str, Any]], raw: Path, build: Path) -> str:
-    del rows
+def per_field_table(raw: Path, build: Path) -> str:
     counts: dict[tuple[str, str, str], Counts] = defaultdict(Counts)
     for path in sorted(raw.glob("*/*/base/s*.json")):
         run = json.loads(path.read_text())
@@ -158,21 +197,32 @@ def per_field_table(rows: list[dict[str, Any]], raw: Path, build: Path) -> str:
     return "\n".join(lines) + "\n"
 
 
-def paired_tests(rows: list[dict[str, Any]], pairs: list[tuple[str, str]],
-                 variants: list[str]) -> str:
-    lines = ["| Comparison | Variants | Mean F1 difference | 95% CI | p |",
-             "|---|---|---|---|---|"]
+def _cluster_means(rows: list[Row], system: str, variants: list[str]) -> dict[Any, float]:
+    groups: dict[tuple[str, int], list[float]] = defaultdict(list)
+    for r in rows:
+        if r["system"] == system and r["variant"] in variants:
+            groups[(r["kind"], r["seed"])].append(r["field_f1"])
+    return {k: sum(v) / len(v) for k, v in groups.items()}
+
+
+def paired_tests(rows: list[Row], pairs: list[tuple[str, str]], variants: list[str]) -> str:
+    """Cluster level paired differences, exact sign flip test, Holm adjusted."""
+    results = []
     for a, b in pairs:
-        key = {(r["kind"], r["variant"], r["seed"]): r["field_f1"]
-               for r in rows if r["system"] == a and r["variant"] in variants}
-        other = {(r["kind"], r["variant"], r["seed"]): r["field_f1"]
-                 for r in rows if r["system"] == b and r["variant"] in variants}
-        common = sorted(key.keys() & other.keys())
-        if not common:
+        va, vb = _cluster_means(rows, a, variants), _cluster_means(rows, b, variants)
+        common = sorted(va.keys() & vb.keys())
+        if len(common) < 2:
             continue
-        d, lo, hi, p = paired_bootstrap([key[k] for k in common], [other[k] for k in common])
-        lines.append(f"| {a} minus {b} | {', '.join(variants)} | {d:+.3f} | "
-                     f"[{lo:+.3f}, {hi:+.3f}] | {p:.3f} |")
+        xa, xb = [va[k] for k in common], [vb[k] for k in common]
+        d, lo, hi, _ = paired_bootstrap(xa, xb)
+        p = sign_flip_test([x - y for x, y in zip(xa, xb, strict=True)])
+        results.append((a, b, d, lo, hi, p, len(common)))
+    adjusted = holm([r[5] for r in results]) if results else []
+    lines = ["| Comparison | Mean F1 difference | 95% CI | p (sign flip) | p (Holm) | Clusters |",
+             "|---|---|---|---|---|---|"]
+    for (a, b, d, lo, hi, p, n), padj in zip(results, adjusted, strict=True):
+        lines.append(f"| {a} minus {b} | {d:+.3f} | [{lo:+.3f}, {hi:+.3f}] | {p:.3f} | "
+                     f"{padj:.3f} | {n} |")
     return "\n".join(lines) + "\n"
 
 

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Rebuild the sites, run every system and write the tables.
-# With a filled .cache folder this makes no API calls. Without it, it needs
-# ANTHROPIC_API_KEY and spends a few dollars (see README).
+# LLM answers are cached in .cache, so a second run on the same machine makes no API
+# calls. A fresh clone has no cache: it needs ANTHROPIC_API_KEY and spends a few dollars
+# (see README). To only rebuild the tables from the stored raw outputs, run
+# scripts/rescore.sh instead.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 if [ -f .env ]; then set -a; . ./.env; set +a; fi
