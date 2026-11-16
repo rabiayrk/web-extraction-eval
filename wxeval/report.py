@@ -102,7 +102,7 @@ def summarize(rows: list[dict[str, Any]], fresh: list[dict[str, Any]],
         reqs = sum(r["requests"] for r in rs)
         secs = sum(r["seconds"] for r in rs) + prep.get(system, {}).get("seconds", 0.0)
         per_k = 1000 * cost / matched if matched else float("nan")
-        row = {
+        row: dict[str, Any] = {
             "system": system,
             "base_f1": bootstrap_ci(base), "coverage": bootstrap_ci(cov),
             "redesign_f1": bootstrap_ci(redesign), "duplicate_rate": bootstrap_ci(dup),

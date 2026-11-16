@@ -20,9 +20,14 @@ MODEL = "claude-haiku-5-5"
 
 # USD per 1M tokens, from the Anthropic pricing page on 2026-11-16.
 # Prompts above 100K tokens use the second rate card.
-PRICES = {
-    "claude-haiku-5-5": {"limit": 100_000, "low": (0.10, 0.50), "high": (0.50, 2.50)},
-}
+@dataclass(frozen=True)
+class PriceCard:
+    limit: int
+    low: tuple[float, float]
+    high: tuple[float, float]
+
+
+PRICES = {"claude-haiku-5-5": PriceCard(100_000, (0.10, 0.50), (0.50, 2.50))}
 
 
 class BudgetExceeded(RuntimeError):
@@ -31,7 +36,7 @@ class BudgetExceeded(RuntimeError):
 
 def price(model: str, input_tokens: int, output_tokens: int) -> float:
     card = PRICES[model]
-    rate_in, rate_out = card["low"] if input_tokens <= card["limit"] else card["high"]
+    rate_in, rate_out = card.low if input_tokens <= card.limit else card.high
     return (input_tokens * rate_in + output_tokens * rate_out) / 1_000_000
 
 
