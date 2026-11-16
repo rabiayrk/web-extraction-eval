@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from typing import Any
+from urllib.parse import urlsplit
 
 from .base import Context, System, Task, crawl
 from .clean import simplify
@@ -39,7 +40,8 @@ class LLMPerPage(System):
         schema = page_schema(task.schema.json_schema())
 
         def page(html: str, url: str) -> tuple[list[dict[str, Any]], str | None]:
-            user = (f"Fields:\n{task.schema.describe()}\n\nPage URL: {url}\n\n"
+            # Only the path, so the local server port does not change the prompt.
+            user = (f"Fields:\n{task.schema.describe()}\n\nPage path: {urlsplit(url).path}\n\n"
                     f"Page HTML:\n{simplify(html)}")
             reply = claude.complete(self.name, system, user, schema)
             data = json.loads(reply.text)

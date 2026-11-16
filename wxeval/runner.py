@@ -47,14 +47,19 @@ def build_all(out: Path, kinds: list[str], variants: list[str],
 
 def run(systems: list[System], kinds: list[str], variants: list[str], seeds: list[int],
         build: Path, results: Path, cache: Path, budget: float, fetch_mode: str = "browser",
-        log: Any = print) -> None:
-    sites = build_all(build, kinds, variants, seeds)
+        log: Any = print, port: int = PORT, skip_build: bool = False) -> None:
+    if skip_build:
+        sites = [SiteInstance(k, VARIANTS[v], s, f"/{k}/{v}/s{s}",
+                              build / "truth" / k / v / f"s{s}.json")
+                 for k in kinds for v in variants for s in seeds]
+    else:
+        sites = build_all(build, kinds, variants, seeds)
     ledger = Ledger(results / "spend.jsonl", budget)
     claude = Claude(DiskCache(cache / "llm"), ledger)
     raw = results / "raw" / fetch_mode
     setup = {"fetch_mode": fetch_mode, "model": MODEL, "effort": "model default",
              "versions": versions()}
-    with SiteServer(build / "www", PORT) as server, Fetcher(fetch_mode) as fetcher:
+    with SiteServer(build / "www", port) as server, Fetcher(fetch_mode) as fetcher:
         for system in systems:
             ctx = Context(fetcher, ledger, claude if system.uses_llm else None,
                           build / "work" / system.name, cache / "tools")
