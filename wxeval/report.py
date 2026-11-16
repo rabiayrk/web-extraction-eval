@@ -71,7 +71,8 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
             w.writerow({k: round(v, 4) if isinstance(v, float) else v for k, v in r.items()})
 
 
-def fmt(mean: float, lo: float, hi: float, digits: int = 2) -> str:
+def fmt(ci: tuple[float, float, float], digits: int = 2) -> str:
+    mean, lo, hi = ci
     return f"{mean:.{digits}f} [{lo:.{digits}f}, {hi:.{digits}f}]"
 
 
@@ -112,9 +113,9 @@ def summarize(rows: list[dict[str, Any]], fresh: list[dict[str, Any]],
         }
         table.append(row)
         lines.append(
-            f"| {system} | {fmt(*row['base_f1'])} | {fmt(*row['coverage'])} | "
-            f"{fmt(*row['redesign_f1'])} | {fmt(*row['duplicate_rate'], digits=3)} | "
-            f"{fmt(*row['merge_rate'], digits=3)} | {fmt(*row['change_f1'])} | "
+            f"| {system} | {fmt(row['base_f1'])} | {fmt(row['coverage'])} | "
+            f"{fmt(row['redesign_f1'])} | {fmt(row['duplicate_rate'], digits=3)} | "
+            f"{fmt(row['merge_rate'], digits=3)} | {fmt(row['change_f1'])} | "
             f"{per_k:.3f} | {row['requests_per_record']:.2f} | "
             f"{row['seconds_per_record']:.3f} |")
     return "\n".join(lines) + "\n", table
