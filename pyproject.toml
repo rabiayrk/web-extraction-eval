@@ -17,6 +17,11 @@ dependencies = [
 browser = ["playwright>=1.55"]
 llm = ["anthropic>=0.70"]
 report = ["matplotlib>=3.9"]
+tools = [
+    "crawl4ai==0.9.5",
+    "langchain-anthropic>=1.7.10",
+    "scrapegraphai==2.3.1",
+]
 
 [dependency-groups]
 dev = ["pytest>=8.3", "ruff>=0.8", "mypy>=1.13"]
