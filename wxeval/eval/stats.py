@@ -29,8 +29,6 @@ def paired_bootstrap(a: Sequence[float], b: Sequence[float], n_boot: int = 2000,
     means = diff[idx].mean(axis=1)
     lo, hi = np.quantile(means, [0.025, 0.975])
     # Share of resamples on the other side of zero, doubled.
-    if diff.mean() >= 0:
-        p = 2 * float((means <= 0).mean())
-    else:
-        p = 2 * float((means >= 0).mean())
+    other_side = means <= 0 if diff.mean() >= 0 else means >= 0
+    p = 2 * float(other_side.mean())
     return float(diff.mean()), float(lo), float(hi), min(1.0, p)
