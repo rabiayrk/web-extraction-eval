@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import os
 import time
+from importlib import metadata
 from typing import Any
 
 from ..llm import MODEL, DiskCache, price
@@ -37,7 +38,6 @@ class Crawl4AIPerPage(System):
     uses_llm = True
 
     def extract(self, task: Task, ctx: Context) -> list[dict[str, Any]]:
-        import crawl4ai
         from crawl4ai import LLMExtractionStrategy
         from crawl4ai.markdown_generation_strategy import DefaultMarkdownGenerator
 
@@ -55,8 +55,9 @@ class Crawl4AIPerPage(System):
         markdown = DefaultMarkdownGenerator()
 
         def page(html: str, url: str) -> tuple[list[dict[str, Any]], str | None]:
-            md = markdown.generate_markdown(html, base_url=url).raw_markdown
-            key = DiskCache.key({"tool": "crawl4ai_llm", "version": crawl4ai.__version__,
+            # No base URL: links stay relative, so the server port does not change the input.
+            md = markdown.generate_markdown(html, base_url="").raw_markdown
+            key = DiskCache.key({"tool": "crawl4ai_llm", "version": metadata.version("crawl4ai"),
                                  "model": MODEL, "input": md, "instruction": instruction,
                                  "schema": schema})
             hit = cache.get(key)
@@ -104,7 +105,6 @@ class Crawl4AISchema(System):
         self.schemas: dict[str, dict[str, Any]] = {}
 
     def prepare(self, dev: Task, ctx: Context) -> None:
-        import crawl4ai
         from crawl4ai import JsonCssExtractionStrategy
         from crawl4ai.models import TokenUsage
 
@@ -113,7 +113,7 @@ class Crawl4AISchema(System):
                  f"{dev.schema.describe()}")
         example = json.dumps({n: "..." for n in dev.schema.names()})
         cache = DiskCache(ctx.cache_dir)
-        key = DiskCache.key({"tool": "crawl4ai_schema", "version": crawl4ai.__version__,
+        key = DiskCache.key({"tool": "crawl4ai_schema", "version": metadata.version("crawl4ai"),
                              "model": MODEL, "html": html, "query": query})
         hit = cache.get(key)
         if hit is None:
@@ -148,4 +148,4 @@ class Crawl4AISchema(System):
         def page(html: str, url: str) -> tuple[list[dict[str, Any]], str | None]:
             return strategy.extract(url, html), None
 
-        return crawl(task.start_url, ctx, page, fallback_next=True)
+        return crawl(task.start_url, ctx, page)

@@ -62,12 +62,13 @@ def next_link(html: str) -> str | None:
     return None
 
 
-def crawl(start_url: str, ctx: Context, page_fn: PageFn, fallback_next: bool = False,
+def crawl(start_url: str, ctx: Context, page_fn: PageFn,
           max_pages: int = MAX_PAGES) -> list[dict[str, Any]]:
     """Follow next links. page_fn gets (html, url) and returns (records, next_url).
 
-    Code based systems get fallback_next: when they find no next link, the generic rule
-    is tried. A page that fails stops the crawl but keeps the records found so far.
+    When a system gives no next link, the same generic rule is tried for every system, so
+    that coverage measures extraction and not each tool's own paging support. A page that
+    fails stops the crawl but keeps the records found so far.
     """
     records: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -83,7 +84,7 @@ def crawl(start_url: str, ctx: Context, page_fn: PageFn, fallback_next: bool = F
             ctx.errors.append(f"{url}: {type(exc).__name__}: {str(exc)[:200]}")
             break
         records.extend(found)
-        if not nxt and fallback_next:
+        if not nxt:
             nxt = next_link(html)
         url = urljoin(url, nxt) if nxt else None
     return dedupe(records)

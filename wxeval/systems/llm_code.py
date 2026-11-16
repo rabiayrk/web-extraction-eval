@@ -9,6 +9,7 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 from .base import Context, System, Task, crawl
 from .clean import simplify
@@ -61,7 +62,7 @@ class LLMWrittenCode(System):
         assert ctx.claude is not None
         html = ctx.fetcher.get(dev.start_url)
         page = simplify(html, keep=("href", "datetime", "class", "id", "rel"))
-        base = (f"Fields:\n{dev.schema.describe()}\n\nPage URL: {dev.start_url}\n\n"
+        base = (f"Fields:\n{dev.schema.describe()}\n\nPage path: {urlsplit(dev.start_url).path}\n\n"
                 f"Page HTML:\n{page}")
         user = base
         path = ctx.workdir / f"{dev.kind}.py"
@@ -88,4 +89,4 @@ class LLMWrittenCode(System):
             out = run_code(path, html, url)
             return list(out.get("records") or []), out.get("next_url")
 
-        return crawl(task.start_url, ctx, page, fallback_next=True)
+        return crawl(task.start_url, ctx, page)
