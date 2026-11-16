@@ -268,10 +268,15 @@ def build_site(kind: str, variant: Variant, seed: int, out: Path) -> SiteInstanc
                 body = heading + inner
             (root / "list" / f"page-{i}.html").write_text(page_html(f"{title} page {i}", body))
 
+    page_of: dict[str, int] = {}
+    for i, units in enumerate(pages, start=1):
+        for unit in units:
+            for rec in ([unit] if kind == "shop" else unit[1]):
+                page_of[rec[ds.key_field]] = i
     truth = out / "truth" / kind / variant.name / f"s{seed}.json"
     truth.parent.mkdir(parents=True, exist_ok=True)
     truth.write_text(json.dumps({
         "kind": kind, "variant": variant.name, "seed": seed, "key": ds.key_field,
-        "records": ds.records, "twins": ds.twins, "pages": total,
+        "records": ds.records, "twins": ds.twins, "pages": total, "page_of": page_of,
     }, indent=1, sort_keys=True))
     return SiteInstance(kind, variant, seed, path, truth)

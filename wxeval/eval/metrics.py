@@ -1,8 +1,9 @@
 """Record matching and the extraction metrics.
 
-Predicted records are matched to ground truth records one to one with the Hungarian
-algorithm, using the share of fields that agree as similarity. A pair counts as matched
-only if at least MATCH_THRESHOLD of the fields agree.
+A predicted record whose key (sku or ref) equals a ground truth key is matched to that
+record. The remaining records are matched one to one with the Hungarian algorithm, using
+the share of fields that agree as similarity, and a pair counts only if at least
+MATCH_THRESHOLD of the fields agree.
 """
 
 from __future__ import annotations
@@ -105,22 +106,35 @@ class Result:
 
 
 def evaluate(pred_raw: list[dict[str, Any]], gold_raw: list[dict[str, Any]], schema: Schema,
-             key: str, twins: dict[str, int] | None = None) -> Result:
+             key: str, twins: dict[str, int] | None = None,
+             page_of: dict[str, int] | None = None, strict: bool = False) -> Result:
     names = schema.names()
-    pred = [normalize_record(p, schema) for p in pred_raw if isinstance(p, dict)]
-    gold = [normalize_record(g, schema) for g in gold_raw]
+    pred = [normalize_record(p, schema, strict) for p in pred_raw if isinstance(p, dict)]
+    gold = [normalize_record(g, schema, strict) for g in gold_raw]
     gold_keys = [str(g[key]) for g in gold_raw]
 
+    # Step 1: a prediction with the exact record key matches that record.
+    pairs: list[tuple[int, int]] = []
+    key_index = {gold[j][key]: j for j in range(len(gold))}
+    taken: set[int] = set()
+    for i, p in enumerate(pred):
+        j = key_index.get(p[key])
+        if j is not None and j not in taken:
+            pairs.append((i, j))
+            taken.add(j)
+    # Step 2: records with an unknown or missing key are matched on field agreement. A
+    # record that repeats a known key is a claim to be that record, so it is not reused.
+    rest_p = [i for i in range(len(pred)) if pred[i][key] not in key_index]
+    rest_g = [j for j in range(len(gold)) if j not in taken]
     sim = np.zeros((len(pred), len(gold)))
     for i, p in enumerate(pred):
         for j, g in enumerate(gold):
             sim[i, j] = similarity(p, g, names)
-
-    pairs: list[tuple[int, int]] = []
-    if pred and gold:
-        rows, cols = linear_sum_assignment(-sim)
-        pairs = [(int(i), int(j)) for i, j in zip(rows, cols, strict=True)
-                 if sim[i, j] >= MATCH_THRESHOLD]
+    if rest_p and rest_g:
+        sub = sim[np.ix_(rest_p, rest_g)]
+        rows, cols = linear_sum_assignment(-sub)
+        pairs += [(rest_p[int(r)], rest_g[int(c)]) for r, c in zip(rows, cols, strict=True)
+                  if sub[r, c] >= MATCH_THRESHOLD]
     pred_matched = {i for i, _ in pairs}
     gold_matched = {j for _, j in pairs}
 
@@ -150,27 +164,42 @@ def evaluate(pred_raw: list[dict[str, Any]], gold_raw: list[dict[str, Any]], sch
     for c in per_field.values():
         total.add(c)
 
-    # An unmatched prediction whose closest gold record is already matched is a duplicate.
+    # A duplicate is an extra prediction for a record that is already matched: same key,
+    # or closest by field agreement.
     duplicates = 0
     for i in range(len(pred)):
         if i in pred_matched or not gold:
             continue
-        j = int(np.argmax(sim[i]))
-        if sim[i, j] >= MATCH_THRESHOLD and j in gold_matched:
+        j = key_index.get(pred[i][key])
+        if j is None:
+            j = int(np.argmax(sim[i]))
+            if sim[i, j] < MATCH_THRESHOLD:
+                continue
+        if j in gold_matched:
             duplicates += 1
 
-    # A twin is lost to a wrong merge when it is unmatched but a sibling was matched.
+    # Wrong merges: a twin is missing while its sibling was found on a page the system
+    # did read. Twins on pages the system never reached are coverage misses, not merges.
     twins = twins or {}
+    reached: set[int] | None = None
+    if page_of is not None:
+        reached = {page_of[gold_keys[j]] for j in gold_matched
+                   if gold_keys[j] not in twins and gold_keys[j] in page_of}
     groups: dict[int, list[int]] = {}
     for j, k in enumerate(gold_keys):
         if k in twins:
             groups.setdefault(twins[k], []).append(j)
-    twin_total = sum(len(m) for m in groups.values())
+    twin_total = 0
     twin_lost = 0
     for members in groups.values():
-        hit = [j in gold_matched for j in members]
-        if any(hit):
-            twin_lost += hit.count(False)
+        if not any(j in gold_matched for j in members):
+            continue
+        for j in members:
+            if reached is not None and page_of is not None \
+                    and page_of.get(gold_keys[j]) not in reached:
+                continue
+            twin_total += 1
+            twin_lost += int(j not in gold_matched)
 
     alignment = {gold_keys[j]: pred[i] for i, j in pairs}
     return Result(len(gold), len(pred), len(pairs), total, per_field, duplicates,
