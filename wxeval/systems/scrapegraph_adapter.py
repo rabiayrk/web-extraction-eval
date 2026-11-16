@@ -7,6 +7,7 @@ Pydantic schema built from the task schema.
 from __future__ import annotations
 
 import time
+from importlib import metadata
 from typing import Any
 
 from pydantic import BaseModel, create_model
@@ -54,7 +55,6 @@ class ScrapeGraphSmart(System):
     uses_llm = True
 
     def extract(self, task: Task, ctx: Context) -> list[dict[str, Any]]:
-        import scrapegraphai
         from langchain_anthropic import ChatAnthropic
         from scrapegraphai.graphs import SmartScraperGraph
 
@@ -63,7 +63,7 @@ class ScrapeGraphSmart(System):
                   f"{task.schema.describe()}\nAlso give the URL of the next page of results "
                   "as next_page_url, or null.")
         cache = DiskCache(ctx.cache_dir)
-        version = getattr(scrapegraphai, "__version__", "2.3.1")
+        version = metadata.version("scrapegraphai")
 
         def page(html: str, url: str) -> tuple[list[dict[str, Any]], str | None]:
             key = DiskCache.key({"tool": "scrapegraph", "version": version, "model": MODEL,

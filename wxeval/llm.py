@@ -168,15 +168,16 @@ class Claude:
         with self._client.messages.stream(**kwargs) as stream:
             msg = stream.get_final_message()
         seconds = time.perf_counter() - start
-        if msg.stop_reason in ("refusal", "max_tokens"):
-            raise RuntimeError(f"model stopped with {msg.stop_reason}")
-        text = "".join(b.text for b in msg.content if b.type == "text")
         in_tok = msg.usage.input_tokens + (msg.usage.cache_read_input_tokens or 0) + (
             msg.usage.cache_creation_input_tokens or 0)
         out_tok = msg.usage.output_tokens
         cost = price(self.model, in_tok, out_tok)
+        # Log the spend before anything else can fail.
+        self.ledger.record(source, self.model, in_tok, out_tok, cost, seconds, cached=False)
+        if msg.stop_reason in ("refusal", "max_tokens"):
+            raise RuntimeError(f"model stopped with {msg.stop_reason}")
+        text = "".join(b.text for b in msg.content if b.type == "text")
         self.cache.put(key, {"text": text, "input_tokens": in_tok, "output_tokens": out_tok,
                              "cost": cost, "seconds": seconds, "model": self.model,
-                             "request_id": msg._request_id})
-        self.ledger.record(source, self.model, in_tok, out_tok, cost, seconds, cached=False)
+                             "message_id": msg.id})
         return Reply(text, in_tok, out_tok, cost, seconds, False)
