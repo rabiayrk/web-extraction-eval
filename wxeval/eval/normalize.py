@@ -58,7 +58,27 @@ def to_text(value: Any) -> str | None:
     return text or None
 
 
-def normalize(value: Any, ftype: str) -> Any:
+def normalize_strict(value: Any, ftype: str) -> Any:
+    """Only accept values already in the requested type. Used as an ablation."""
+    if value is None:
+        return None
+    if ftype in ("number", "integer"):
+        if isinstance(value, int | float) and not isinstance(value, bool):
+            return round(float(value), 2)
+        if isinstance(value, str) and re.fullmatch(r"-?\d+(\.\d+)?", value.strip()):
+            return round(float(value), 2)
+        return "invalid"
+    if ftype == "boolean":
+        return value if isinstance(value, bool) else "invalid"
+    if ftype == "date":
+        text = str(value).strip()
+        return text if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text) else "invalid"
+    return to_text(value)
+
+
+def normalize(value: Any, ftype: str, strict: bool = False) -> Any:
+    if strict:
+        return normalize_strict(value, ftype)
     if isinstance(value, str) and value.strip().lower() in {"", "null", "none", "n/a", "na"}:
         return None
     if ftype in ("number", "integer"):
@@ -71,8 +91,9 @@ def normalize(value: Any, ftype: str) -> Any:
     return to_text(value)
 
 
-def normalize_record(rec: dict[str, Any], schema: Schema) -> dict[str, Any]:
-    return {f.name: normalize(rec.get(f.name), f.type) for f in schema.fields}
+def normalize_record(rec: dict[str, Any], schema: Schema,
+                     strict: bool = False) -> dict[str, Any]:
+    return {f.name: normalize(rec.get(f.name), f.type, strict) for f in schema.fields}
 
 
 def equal(a: Any, b: Any) -> bool:
