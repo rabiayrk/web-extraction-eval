@@ -27,6 +27,7 @@ class Context:
     ledger: Ledger
     claude: Claude | None
     workdir: Path  # per system folder for artifacts such as generated code
+    cache_dir: Path  # for adapters that cache tool output themselves
 
 
 class System(ABC):

@@ -40,7 +40,7 @@ def run(systems: list[System], kinds: list[str], variants: list[str], seeds: lis
     with SiteServer(build / "www") as server, Fetcher(fetch_mode) as fetcher:
         for system in systems:
             ctx = Context(fetcher, ledger, claude if system.uses_llm else None,
-                          build / "work" / system.name)
+                          build / "work" / system.name, cache / "tools")
             ctx.workdir.mkdir(parents=True, exist_ok=True)
             for kind in kinds:
                 dev = Task(kind, f"{server.base_url}/{kind}/base/s{DEV_SEED}/list/page-1.html",
