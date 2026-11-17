@@ -37,3 +37,13 @@ def test_records_appear_in_html(tmp_path):
     for rec in make_shop(2).records:
         assert rec["sku"] in html
     assert site.start_path.endswith("page-1.html")
+
+
+def test_next_link_moves_to_current_port():
+    from wxeval.systems.base import local_url
+
+    cur = "http://127.0.0.1:8781/shop/base/s1/list/page-1.html"
+    assert local_url(cur, "page-2.html").endswith(":8781/shop/base/s1/list/page-2.html")
+    old = "http://127.0.0.1:8773/shop/base/s1/list/page-2.html"
+    assert local_url(cur, old) == "http://127.0.0.1:8781/shop/base/s1/list/page-2.html"
+    assert local_url(cur, "https://example.com/x") == "https://example.com/x"

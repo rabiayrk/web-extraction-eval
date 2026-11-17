@@ -6,7 +6,7 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, ClassVar
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlsplit, urlunsplit
 
 from parsel import Selector
 
@@ -62,6 +62,16 @@ def next_link(html: str) -> str | None:
     return None
 
 
+def local_url(current: str, nxt: str) -> str:
+    """Resolve a next link. Absolute links to another local port (for example from a cached
+    answer of an earlier run) are moved to the current server."""
+    url = urljoin(current, nxt)
+    cur, new = urlsplit(current), urlsplit(url)
+    if new.hostname in ("127.0.0.1", "localhost") and new.netloc != cur.netloc:
+        url = urlunsplit((cur.scheme, cur.netloc, new.path, new.query, new.fragment))
+    return url
+
+
 def crawl(start_url: str, ctx: Context, page_fn: PageFn,
           max_pages: int = MAX_PAGES) -> list[dict[str, Any]]:
     """Follow next links. page_fn gets (html, url) and returns (records, next_url).
@@ -86,7 +96,7 @@ def crawl(start_url: str, ctx: Context, page_fn: PageFn,
         records.extend(found)
         if not nxt:
             nxt = next_link(html)
-        url = urljoin(url, nxt) if nxt else None
+        url = local_url(url, nxt) if nxt else None
     return dedupe(records)
 
 
