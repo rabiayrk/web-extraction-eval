@@ -1,0 +1,36 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 5,
+  "requests": 5,
+  "seconds": 4.588114415935706
+ },
+ "fetch_mode": "browser",
+ "kind": "shop",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 0,
+  "cost": 0.0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "seconds": 0.0
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 4.588,
+ "page_errors": [],
+ "records": [],
+ "seed": 3,
+ "system": "llm_code",
+ "truth_sha256": "7cf40e9b7c4bdb35c0eb9ae8bf21b7fdfac1db3f16829c8a24c2e9ffcc4325de",
+ "variant": "layout_b",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 5.018
+}

@@ -1,0 +1,36 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 4,
+  "requests": 4,
+  "seconds": 3.6151081239804626
+ },
+ "fetch_mode": "browser",
+ "kind": "jobs",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 0,
+  "cost": 0.0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "seconds": 0.0
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 3.615,
+ "page_errors": [],
+ "records": [],
+ "seed": 4,
+ "system": "llm_code",
+ "truth_sha256": "d5f82765824e64c6e344170f26592af4c43132d4f01e1e519d4f6a7a984b0af5",
+ "variant": "layout_b",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 3.925
+}

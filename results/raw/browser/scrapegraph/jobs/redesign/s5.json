@@ -1,0 +1,477 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 4,
+  "requests": 4,
+  "seconds": 3.807242124923505
+ },
+ "fetch_mode": "browser",
+ "kind": "jobs",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 4,
+  "cost": 0.0040988000000000005,
+  "input_tokens": 7533,
+  "output_tokens": 6691,
+  "seconds": 21.257786000031047
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 25.065,
+ "page_errors": [],
+ "records": [
+  {
+   "company": "Quiet Finance",
+   "location": "Austin",
+   "posted": "2026-10-08",
+   "ref": "JOB-93632",
+   "remote": false,
+   "salary_max": 165000,
+   "salary_min": 130000,
+   "title": "Lead QA Engineer"
+  },
+  {
+   "company": "Quiet Finance",
+   "location": "Berlin",
+   "posted": "2026-10-13",
+   "ref": "JOB-52024",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 55000,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "Cedar Robotics",
+   "location": "Austin",
+   "posted": "2026-10-20",
+   "ref": "JOB-49866",
+   "remote": true,
+   "salary_max": 75000,
+   "salary_min": 60000,
+   "title": "Junior Backend Developer"
+  },
+  {
+   "company": "Cedar Robotics",
+   "location": "Austin",
+   "posted": "2026-10-13",
+   "ref": "JOB-23566",
+   "remote": false,
+   "salary_max": 155000,
+   "salary_min": 145000,
+   "title": "Senior Backend Developer"
+  },
+  {
+   "company": "North Foods",
+   "location": "Toronto",
+   "posted": "2026-10-10",
+   "ref": "JOB-67709",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "North Foods",
+   "location": "Toronto",
+   "posted": "2026-10-04",
+   "ref": "JOB-15716",
+   "remote": false,
+   "salary_max": 150000,
+   "salary_min": 120000,
+   "title": "Junior Site Reliability Engineer"
+  },
+  {
+   "company": "Harbor Logistics",
+   "location": "Austin",
+   "posted": "2026-10-06",
+   "ref": "JOB-30185",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Harbor Logistics",
+   "location": "Lisbon",
+   "posted": "2026-10-19",
+   "ref": "JOB-76096",
+   "remote": false,
+   "salary_max": 95000,
+   "salary_min": 70000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Harbor Logistics",
+   "location": "Madrid",
+   "posted": "2026-10-05",
+   "ref": "JOB-16473",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 60000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Harbor Logistics",
+   "location": "Dublin",
+   "posted": "2026-11-01",
+   "ref": "JOB-61331",
+   "remote": false,
+   "salary_max": 100000,
+   "salary_min": 60000,
+   "title": "Backend Developer"
+  },
+  {
+   "company": "North Media",
+   "location": "Austin",
+   "posted": "2026-10-14",
+   "ref": "JOB-99625",
+   "remote": true,
+   "salary_max": 85000,
+   "salary_min": 70000,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "North Media",
+   "location": "Berlin",
+   "posted": "2026-10-20",
+   "ref": "JOB-66665",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior ML Engineer"
+  },
+  {
+   "company": "Iron Media",
+   "location": "Dublin",
+   "posted": "2026-11-10",
+   "ref": "JOB-74772",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 65000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Iron Media",
+   "location": "Istanbul",
+   "posted": "2026-10-26",
+   "ref": "JOB-29760",
+   "remote": false,
+   "salary_max": 90000,
+   "salary_min": 80000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Iron Media",
+   "location": "Berlin",
+   "posted": "2026-10-05",
+   "ref": "JOB-43388",
+   "remote": true,
+   "salary_max": 155000,
+   "salary_min": 135000,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "Iron Media",
+   "location": "Dublin",
+   "posted": "2026-10-15",
+   "ref": "JOB-79693",
+   "remote": false,
+   "salary_max": 155000,
+   "salary_min": 130000,
+   "title": "Support Specialist"
+  },
+  {
+   "company": "Blue Labs",
+   "location": "Austin",
+   "posted": "2026-11-01",
+   "ref": "JOB-53924",
+   "remote": false,
+   "salary_max": 155000,
+   "salary_min": 130000,
+   "title": "Junior Technical Writer"
+  },
+  {
+   "company": "Blue Labs",
+   "location": "Toronto",
+   "posted": "2026-10-01",
+   "ref": "JOB-68051",
+   "remote": false,
+   "salary_max": 110000,
+   "salary_min": 70000,
+   "title": "Senior ML Engineer"
+  },
+  {
+   "company": "Blue Labs",
+   "location": "Madrid",
+   "posted": "2026-10-07",
+   "ref": "JOB-64492",
+   "remote": false,
+   "salary_max": 50000,
+   "salary_min": 40000,
+   "title": "Senior ML Engineer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Istanbul",
+   "posted": "2026-10-19",
+   "ref": "JOB-18078",
+   "remote": false,
+   "salary_max": 185000,
+   "salary_min": 140000,
+   "title": "Lead Frontend Developer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Berlin",
+   "posted": "2026-10-04",
+   "ref": "JOB-69232",
+   "remote": false,
+   "salary_max": 165000,
+   "salary_min": 140000,
+   "title": "Senior Product Designer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Madrid",
+   "posted": "2026-10-13",
+   "ref": "JOB-19129",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Product Designer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Toronto",
+   "posted": "2026-10-22",
+   "ref": "JOB-44660",
+   "remote": false,
+   "salary_max": 200000,
+   "salary_min": 155000,
+   "title": "Frontend Developer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Berlin",
+   "posted": "2026-10-07",
+   "ref": "JOB-80526",
+   "remote": false,
+   "salary_max": 140000,
+   "salary_min": 130000,
+   "title": "Frontend Developer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Austin",
+   "posted": "2026-10-29",
+   "ref": "JOB-53074",
+   "remote": false,
+   "salary_max": 160000,
+   "salary_min": 140000,
+   "title": "QA Engineer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Toronto",
+   "posted": "2026-11-06",
+   "ref": "JOB-47501",
+   "remote": true,
+   "salary_max": 145000,
+   "salary_min": 130000,
+   "title": "Senior Data Analyst"
+  },
+  {
+   "company": "Cedar Logistics",
+   "location": "Dublin",
+   "posted": "2026-10-07",
+   "ref": "JOB-58281",
+   "remote": true,
+   "salary_max": 160000,
+   "salary_min": 120000,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "Cedar Logistics",
+   "location": "Toronto",
+   "posted": "2026-10-24",
+   "ref": "JOB-30041",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior Site Reliability Engineer"
+  },
+  {
+   "company": "Cedar Logistics",
+   "location": "Lisbon",
+   "posted": "2026-10-31",
+   "ref": "JOB-45155",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior ML Engineer"
+  },
+  {
+   "company": "Cedar Logistics",
+   "location": "Toronto",
+   "posted": "2026-10-31",
+   "ref": "JOB-14751",
+   "remote": true,
+   "salary_max": 70000,
+   "salary_min": 60000,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "Silver Robotics",
+   "location": "Istanbul",
+   "posted": "2026-10-06",
+   "ref": "JOB-14331",
+   "remote": false,
+   "salary_max": 60000,
+   "salary_min": 45000,
+   "title": "Junior ML Engineer"
+  },
+  {
+   "company": "Silver Robotics",
+   "location": "Dublin",
+   "posted": "2026-10-09",
+   "ref": "JOB-81653",
+   "remote": true,
+   "salary_max": 150000,
+   "salary_min": 110000,
+   "title": "Senior Frontend Developer"
+  },
+  {
+   "company": "Silver Robotics",
+   "location": "Madrid",
+   "posted": "2026-10-05",
+   "ref": "JOB-90798",
+   "remote": false,
+   "salary_max": 50000,
+   "salary_min": 40000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Harbor Finance",
+   "location": "Madrid",
+   "posted": "2026-10-12",
+   "ref": "JOB-23457",
+   "remote": true,
+   "salary_max": 120000,
+   "salary_min": 75000,
+   "title": "Junior Product Designer"
+  },
+  {
+   "company": "Harbor Finance",
+   "location": "Berlin",
+   "posted": "2026-10-07",
+   "ref": "JOB-17039",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior QA Engineer"
+  },
+  {
+   "company": "Harbor Finance",
+   "location": "Toronto",
+   "posted": "2026-10-29",
+   "ref": "JOB-63189",
+   "remote": true,
+   "salary_max": 105000,
+   "salary_min": 95000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Harbor Finance",
+   "location": "Warsaw",
+   "posted": "2026-10-16",
+   "ref": "JOB-22631",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Support Specialist"
+  },
+  {
+   "company": "Harbor Finance",
+   "location": "Warsaw",
+   "posted": "2026-10-02",
+   "ref": "JOB-78350",
+   "remote": false,
+   "salary_max": 90000,
+   "salary_min": 70000,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Berlin",
+   "posted": "2026-10-26",
+   "ref": "JOB-22918",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 90000,
+   "title": "Lead Product Designer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Toronto",
+   "posted": "2026-11-09",
+   "ref": "JOB-50293",
+   "remote": false,
+   "salary_max": 175000,
+   "salary_min": 130000,
+   "title": "Junior Backend Developer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Lisbon",
+   "posted": "2026-11-02",
+   "ref": "JOB-21578",
+   "remote": false,
+   "salary_max": 90000,
+   "salary_min": 55000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Berlin",
+   "posted": "2026-10-11",
+   "ref": "JOB-56421",
+   "remote": false,
+   "salary_max": 105000,
+   "salary_min": 80000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Warsaw",
+   "posted": "2026-10-23",
+   "ref": "JOB-34464",
+   "remote": true,
+   "salary_max": 105000,
+   "salary_min": 75000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Madrid",
+   "posted": "2026-10-10",
+   "ref": "JOB-65782",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Site Reliability Engineer"
+  }
+ ],
+ "seed": 5,
+ "system": "scrapegraph",
+ "truth_sha256": "445e70f3a6df5a8e3aeca1f823bd22a7e90a244fe35a67ebb21eb34318fe737d",
+ "variant": "redesign",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 25.084
+}

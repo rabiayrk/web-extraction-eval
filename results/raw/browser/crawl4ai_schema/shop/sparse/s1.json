@@ -1,0 +1,639 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 5,
+  "requests": 5,
+  "seconds": 4.6495752489427105
+ },
+ "fetch_mode": "browser",
+ "kind": "shop",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 0,
+  "cost": 0.0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "seconds": 0.0
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 4.65,
+ "page_errors": [],
+ "records": [
+  {
+   "brand": "Valko",
+   "category": "kitchen",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Valko Soft Toaster",
+   "price": "329.19",
+   "sku": "SKU-33080"
+  },
+  {
+   "brand": "Bramble",
+   "category": "kitchen",
+   "color": "Black",
+   "in_stock": "In stock",
+   "name": "Bramble Soft Blender",
+   "price": "212.50",
+   "rating": "2.6",
+   "reviews": "1934",
+   "sku": "SKU-28159"
+  },
+  {
+   "brand": "Bramble",
+   "category": "audio",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Bramble Ultra Earbuds",
+   "price": "390.38",
+   "sku": "SKU-61022"
+  },
+  {
+   "brand": "Bramble",
+   "category": "audio",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Bramble Ultra Earbuds",
+   "price": "409.90",
+   "sku": "SKU-80551"
+  },
+  {
+   "brand": "Oduna",
+   "category": "office",
+   "color": "Black",
+   "in_stock": "Out of stock",
+   "name": "Oduna Silent Chair Cushion",
+   "price": "120.09",
+   "rating": "4.8",
+   "reviews": "1809",
+   "sku": "SKU-43409"
+  },
+  {
+   "brand": "Quorra",
+   "category": "kitchen",
+   "color": "Red",
+   "in_stock": "In stock",
+   "name": "Quorra Classic Blender",
+   "price": "292.55",
+   "rating": "3.4",
+   "reviews": "1915",
+   "sku": "SKU-45178"
+  },
+  {
+   "brand": "Quorra",
+   "category": "kitchen",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Quorra Classic Blender",
+   "price": "292.55",
+   "rating": "3.4",
+   "reviews": "1915",
+   "sku": "SKU-68122"
+  },
+  {
+   "brand": "Harrow",
+   "category": "audio",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Harrow Silent Speaker",
+   "price": "215.62",
+   "rating": "4.0",
+   "reviews": "1464",
+   "sku": "SKU-55301"
+  },
+  {
+   "brand": "Quorra",
+   "category": "office",
+   "color": "Olive",
+   "in_stock": "Out of stock",
+   "name": "Quorra Eco Chair Cushion",
+   "price": "385.75",
+   "sku": "SKU-87452"
+  },
+  {
+   "brand": "Quorra",
+   "category": "office",
+   "color": "Grey",
+   "in_stock": "In stock",
+   "name": "Quorra Eco Chair Cushion",
+   "price": "366.46",
+   "sku": "SKU-58367"
+  },
+  {
+   "brand": "Valko",
+   "category": "outdoor",
+   "color": "Grey",
+   "in_stock": "In stock",
+   "name": "Valko Classic Tent",
+   "price": "72.77",
+   "sku": "SKU-77314"
+  },
+  {
+   "brand": "Oduna",
+   "category": "audio",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Oduna Silent Soundbar",
+   "price": "186.26",
+   "rating": "3.6",
+   "reviews": "2292",
+   "sku": "SKU-38095"
+  },
+  {
+   "brand": "Oduna",
+   "category": "outdoor",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Oduna Silent Tent",
+   "price": "243.86",
+   "sku": "SKU-56848"
+  },
+  {
+   "brand": "Oduna",
+   "category": "audio",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Oduna Studio Soundbar",
+   "price": "292.50",
+   "rating": "2.8",
+   "reviews": "2357",
+   "sku": "SKU-42154"
+  },
+  {
+   "brand": "Harrow",
+   "category": "audio",
+   "color": "Red",
+   "in_stock": "In stock",
+   "name": "Harrow Smart Soundbar",
+   "price": "155.32",
+   "rating": "2.8",
+   "reviews": "2423",
+   "sku": "SKU-71382"
+  },
+  {
+   "brand": "Kestrel",
+   "category": "office",
+   "color": "Black",
+   "in_stock": "In stock",
+   "name": "Kestrel Smart Keyboard",
+   "price": "140.25",
+   "sku": "SKU-63765"
+  },
+  {
+   "brand": "Lumen",
+   "category": "office",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Lumen Studio Chair Cushion",
+   "price": "284.42",
+   "rating": "3.6",
+   "reviews": "1719",
+   "sku": "SKU-59685"
+  },
+  {
+   "brand": "Pellam",
+   "category": "outdoor",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Pellam Pro Backpack",
+   "price": "376.57",
+   "rating": "4.4",
+   "reviews": "866",
+   "sku": "SKU-95711"
+  },
+  {
+   "brand": "Pellam",
+   "category": "outdoor",
+   "color": "Black",
+   "in_stock": "In stock",
+   "name": "Pellam Pro Backpack",
+   "price": "376.57",
+   "rating": "4.4",
+   "reviews": "866",
+   "sku": "SKU-57635"
+  },
+  {
+   "brand": "Oduna",
+   "category": "kitchen",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Oduna Daily Toaster",
+   "price": "127.22",
+   "sku": "SKU-56661"
+  },
+  {
+   "brand": "Norvik",
+   "category": "office",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Norvik Daily Chair Cushion",
+   "price": "63.39",
+   "sku": "SKU-71467"
+  },
+  {
+   "brand": "Bramble",
+   "category": "kitchen",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Bramble Compact Blender",
+   "price": "360.31",
+   "rating": "2.8",
+   "reviews": "1327",
+   "sku": "SKU-44071"
+  },
+  {
+   "brand": "Norvik",
+   "category": "outdoor",
+   "color": "Grey",
+   "in_stock": "In stock",
+   "name": "Norvik Soft Sleeping Bag",
+   "price": "260.65",
+   "sku": "SKU-71878"
+  },
+  {
+   "brand": "Pellam",
+   "category": "outdoor",
+   "color": "White",
+   "in_stock": "In stock",
+   "name": "Pellam Smart Tent",
+   "price": "133.92",
+   "rating": "3.6",
+   "reviews": "1676",
+   "sku": "SKU-13825"
+  },
+  {
+   "brand": "Pellam",
+   "category": "outdoor",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Pellam Smart Tent",
+   "price": "133.92",
+   "rating": "3.6",
+   "reviews": "1676",
+   "sku": "SKU-65011"
+  },
+  {
+   "brand": "Altura",
+   "category": "office",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Altura Daily Chair Cushion",
+   "price": "95.00",
+   "rating": "3.6",
+   "reviews": "796",
+   "sku": "SKU-29889"
+  },
+  {
+   "brand": "Altura",
+   "category": "office",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Altura Daily Chair Cushion",
+   "price": "99.75",
+   "rating": "3.6",
+   "reviews": "796",
+   "sku": "SKU-11684"
+  },
+  {
+   "brand": "Harrow",
+   "category": "kitchen",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Harrow Travel Toaster",
+   "price": "179.20",
+   "rating": "2.6",
+   "reviews": "353",
+   "sku": "SKU-83626"
+  },
+  {
+   "brand": "Valko",
+   "category": "kitchen",
+   "color": "White",
+   "in_stock": "In stock",
+   "name": "Valko Classic Rice Cooker",
+   "price": "164.36",
+   "rating": "4.3",
+   "reviews": "197",
+   "sku": "SKU-40826"
+  },
+  {
+   "brand": "Oduna",
+   "category": "outdoor",
+   "color": "Grey",
+   "in_stock": "In stock",
+   "name": "Oduna Soft Backpack",
+   "price": "344.05",
+   "rating": "4.4",
+   "reviews": "2057",
+   "sku": "SKU-23230"
+  },
+  {
+   "brand": "Norvik",
+   "category": "office",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Norvik Soft Monitor Arm",
+   "price": "316.82",
+   "sku": "SKU-88236"
+  },
+  {
+   "brand": "Norvik",
+   "category": "office",
+   "color": "Sand",
+   "in_stock": "In stock",
+   "name": "Norvik Soft Monitor Arm",
+   "price": "316.82",
+   "sku": "SKU-17813"
+  },
+  {
+   "brand": "Quorra",
+   "category": "outdoor",
+   "color": "Olive",
+   "in_stock": "Out of stock",
+   "name": "Quorra Smart Backpack",
+   "price": "312.46",
+   "rating": "4.1",
+   "reviews": "1827",
+   "sku": "SKU-94139"
+  },
+  {
+   "brand": "Quorra",
+   "category": "outdoor",
+   "color": "Black",
+   "in_stock": "In stock",
+   "name": "Quorra Smart Backpack",
+   "price": "312.46",
+   "rating": "4.1",
+   "reviews": "1827",
+   "sku": "SKU-85382"
+  },
+  {
+   "brand": "Norvik",
+   "category": "office",
+   "color": "Grey",
+   "in_stock": "In stock",
+   "name": "Norvik Rapid Monitor Arm",
+   "price": "89.51",
+   "sku": "SKU-34849"
+  },
+  {
+   "brand": "Mistral Works",
+   "category": "outdoor",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Mistral Works Smart Lantern",
+   "price": "155.46",
+   "rating": "3.3",
+   "reviews": "65",
+   "sku": "SKU-16560"
+  },
+  {
+   "brand": "Norvik",
+   "category": "office",
+   "color": "Olive",
+   "in_stock": "Out of stock",
+   "name": "Norvik Silent Desk Lamp",
+   "price": "311.41",
+   "rating": "3.5",
+   "reviews": "219",
+   "sku": "SKU-58233"
+  },
+  {
+   "brand": "Bramble",
+   "category": "audio",
+   "color": "Sand",
+   "in_stock": "In stock",
+   "name": "Bramble Silent Earbuds",
+   "price": "296.39",
+   "rating": "3.6",
+   "reviews": "233",
+   "sku": "SKU-95108"
+  },
+  {
+   "brand": "Pellam",
+   "category": "office",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Pellam Compact Notebook Stand",
+   "price": "204.61",
+   "rating": "3.7",
+   "reviews": "1510",
+   "sku": "SKU-56775"
+  },
+  {
+   "brand": "Tessin",
+   "category": "office",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Tessin Silent Keyboard",
+   "price": "102.38",
+   "sku": "SKU-73971"
+  },
+  {
+   "brand": "Tessin",
+   "category": "office",
+   "color": "Grey",
+   "in_stock": "Out of stock",
+   "name": "Tessin Silent Keyboard",
+   "price": "107.50",
+   "sku": "SKU-62119"
+  },
+  {
+   "brand": "Bramble",
+   "category": "audio",
+   "color": "Black",
+   "in_stock": "In stock",
+   "name": "Bramble Daily Soundbar",
+   "price": "281.47",
+   "rating": "4.1",
+   "reviews": "435",
+   "sku": "SKU-58279"
+  },
+  {
+   "brand": "Bramble",
+   "category": "outdoor",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Bramble Rapid Water Filter",
+   "price": "209.29",
+   "rating": "4.3",
+   "reviews": "780",
+   "sku": "SKU-91735"
+  },
+  {
+   "brand": "Tessin",
+   "category": "outdoor",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Tessin Travel Sleeping Bag",
+   "price": "290.25",
+   "sku": "SKU-20809"
+  },
+  {
+   "brand": "Mistral Works",
+   "category": "kitchen",
+   "color": "Grey",
+   "in_stock": "In stock",
+   "name": "Mistral Works Classic Rice Cooker",
+   "price": "286.13",
+   "rating": "3.6",
+   "reviews": "413",
+   "sku": "SKU-84867"
+  },
+  {
+   "brand": "Lumen",
+   "category": "office",
+   "color": "Olive",
+   "in_stock": "Out of stock",
+   "name": "Lumen Rapid Keyboard",
+   "price": "80.47",
+   "sku": "SKU-39782"
+  },
+  {
+   "brand": "Harrow",
+   "category": "kitchen",
+   "color": "Red",
+   "in_stock": "Out of stock",
+   "name": "Harrow Smart Coffee Grinder",
+   "price": "118.89",
+   "rating": "3.6",
+   "reviews": "1710",
+   "sku": "SKU-25928"
+  },
+  {
+   "brand": "Pellam",
+   "category": "office",
+   "color": "Black",
+   "in_stock": "In stock",
+   "name": "Pellam Ultra Desk Lamp",
+   "price": "352.05",
+   "sku": "SKU-54740"
+  },
+  {
+   "brand": "Altura",
+   "category": "outdoor",
+   "color": "Green",
+   "in_stock": "In stock",
+   "name": "Altura Soft Sleeping Bag",
+   "price": "363.90",
+   "sku": "SKU-82379"
+  },
+  {
+   "brand": "Quorra",
+   "category": "audio",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Quorra Soft Speaker",
+   "price": "20.42",
+   "rating": "4.5",
+   "reviews": "119",
+   "sku": "SKU-59047"
+  },
+  {
+   "brand": "Valko",
+   "category": "kitchen",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Valko Travel Rice Cooker",
+   "price": "152.33",
+   "sku": "SKU-54192"
+  },
+  {
+   "brand": "Altura",
+   "category": "outdoor",
+   "color": "Red",
+   "in_stock": "Out of stock",
+   "name": "Altura Travel Backpack",
+   "price": "228.35",
+   "sku": "SKU-24032"
+  },
+  {
+   "brand": "Tessin",
+   "category": "kitchen",
+   "color": "Sand",
+   "in_stock": "In stock",
+   "name": "Tessin Classic Coffee Grinder",
+   "price": "44.92",
+   "sku": "SKU-11386"
+  },
+  {
+   "brand": "Norvik",
+   "category": "audio",
+   "color": "White",
+   "in_stock": "Out of stock",
+   "name": "Norvik Studio Turntable",
+   "price": "292.04",
+   "sku": "SKU-30138"
+  },
+  {
+   "brand": "Norvik",
+   "category": "audio",
+   "color": "Red",
+   "in_stock": "In stock",
+   "name": "Norvik Studio Turntable",
+   "price": "292.04",
+   "sku": "SKU-98097"
+  },
+  {
+   "brand": "Quorra",
+   "category": "audio",
+   "color": "Olive",
+   "in_stock": "In stock",
+   "name": "Quorra Daily Speaker",
+   "price": "157.53",
+   "sku": "SKU-17076"
+  },
+  {
+   "brand": "Bramble",
+   "category": "office",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Bramble Eco Chair Cushion",
+   "price": "206.14",
+   "sku": "SKU-24391"
+  },
+  {
+   "brand": "Norvik",
+   "category": "outdoor",
+   "color": "Blue",
+   "in_stock": "In stock",
+   "name": "Norvik Ultra Water Filter",
+   "price": "243.33",
+   "rating": "3.2",
+   "reviews": "297",
+   "sku": "SKU-32495"
+  },
+  {
+   "brand": "Mistral Works",
+   "category": "kitchen",
+   "color": "Grey",
+   "in_stock": "Out of stock",
+   "name": "Mistral Works Eco Blender",
+   "price": "85.46",
+   "sku": "SKU-18492"
+  },
+  {
+   "brand": "Harrow",
+   "category": "audio",
+   "color": "Grey",
+   "in_stock": "In stock",
+   "name": "Harrow Classic Speaker",
+   "price": "135.84",
+   "sku": "SKU-76057"
+  }
+ ],
+ "seed": 1,
+ "system": "crawl4ai_schema",
+ "truth_sha256": "803660a4081f7ec388d6351c8a6a2f0a8844852395662faf3dc3fa052deef756",
+ "variant": "sparse",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 4.708
+}

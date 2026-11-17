@@ -1,0 +1,27 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 1,
+  "requests": 1,
+  "seconds": 0.9202707080403343
+ },
+ "fetch_mode": "browser",
+ "llm": {
+  "cached_calls": 1,
+  "calls": 1,
+  "cost": 0.0030551000000000003,
+  "input_tokens": 17381,
+  "output_tokens": 2634,
+  "seconds": 15.559175417001825
+ },
+ "model": "claude-haiku-5-5",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ }
+}

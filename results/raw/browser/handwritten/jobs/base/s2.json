@@ -1,0 +1,547 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 4,
+  "requests": 4,
+  "seconds": 3.7208532500080764
+ },
+ "fetch_mode": "browser",
+ "kind": "jobs",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 0,
+  "cost": 0.0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "seconds": 0.0
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 3.721,
+ "page_errors": [],
+ "records": [
+  {
+   "company": "Harbor Energy",
+   "location": "Dublin",
+   "posted": "2026-11-01",
+   "ref": "JOB-88590",
+   "remote": true,
+   "salary_max": 170000,
+   "salary_min": 145000,
+   "title": "Data Analyst"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Madrid",
+   "posted": "2026-10-03",
+   "ref": "JOB-18745",
+   "remote": false,
+   "salary_max": 95000,
+   "salary_min": 70000,
+   "title": "Data Analyst"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Warsaw",
+   "posted": "2026-10-30",
+   "ref": "JOB-22270",
+   "remote": false,
+   "salary_max": 80000,
+   "salary_min": 40000,
+   "title": "Backend Developer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Madrid",
+   "posted": "2026-11-04",
+   "ref": "JOB-63058",
+   "remote": true,
+   "salary_max": 65000,
+   "salary_min": 45000,
+   "title": "Backend Developer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Lisbon",
+   "posted": "2026-10-24",
+   "ref": "JOB-19708",
+   "remote": false,
+   "salary_max": 105000,
+   "salary_min": 70000,
+   "title": "Senior ML Engineer"
+  },
+  {
+   "company": "Blue Media",
+   "location": "Dublin",
+   "posted": "2026-10-10",
+   "ref": "JOB-88287",
+   "remote": false,
+   "salary_max": 65000,
+   "salary_min": 45000,
+   "title": "Support Specialist"
+  },
+  {
+   "company": "Blue Media",
+   "location": "Austin",
+   "posted": "2026-11-08",
+   "ref": "JOB-80267",
+   "remote": false,
+   "salary_max": 115000,
+   "salary_min": 85000,
+   "title": "Support Specialist"
+  },
+  {
+   "company": "Blue Media",
+   "location": "Berlin",
+   "posted": "2026-10-31",
+   "ref": "JOB-56440",
+   "remote": true,
+   "salary_max": 100000,
+   "salary_min": 65000,
+   "title": "Lead Product Designer"
+  },
+  {
+   "company": "Silver Media",
+   "location": "Madrid",
+   "posted": "2026-10-22",
+   "ref": "JOB-37368",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 90000,
+   "title": "ML Engineer"
+  },
+  {
+   "company": "Silver Media",
+   "location": "Toronto",
+   "posted": "2026-10-06",
+   "ref": "JOB-46495",
+   "remote": true,
+   "salary_max": 105000,
+   "salary_min": 90000,
+   "title": "Lead QA Engineer"
+  },
+  {
+   "company": "Silver Media",
+   "location": "Warsaw",
+   "posted": "2026-11-06",
+   "ref": "JOB-87002",
+   "remote": true,
+   "salary_max": 130000,
+   "salary_min": 105000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Quiet Labs",
+   "location": "Austin",
+   "posted": "2026-10-02",
+   "ref": "JOB-52635",
+   "remote": false,
+   "salary_max": 55000,
+   "salary_min": 40000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Quiet Labs",
+   "location": "Berlin",
+   "posted": "2026-10-04",
+   "ref": "JOB-50691",
+   "remote": false,
+   "salary_max": 110000,
+   "salary_min": 95000,
+   "title": "Junior Site Reliability Engineer"
+  },
+  {
+   "company": "North Media",
+   "location": "Istanbul",
+   "posted": "2026-11-10",
+   "ref": "JOB-50044",
+   "remote": true,
+   "salary_max": 175000,
+   "salary_min": 145000,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "North Media",
+   "location": "Lisbon",
+   "posted": "2026-10-18",
+   "ref": "JOB-82244",
+   "remote": true,
+   "salary_max": 90000,
+   "salary_min": 55000,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "North Media",
+   "location": "Warsaw",
+   "posted": "2026-10-13",
+   "ref": "JOB-57263",
+   "remote": true,
+   "salary_max": 140000,
+   "salary_min": 115000,
+   "title": "Lead QA Engineer"
+  },
+  {
+   "company": "North Media",
+   "location": "Dublin",
+   "posted": "2026-10-08",
+   "ref": "JOB-97072",
+   "remote": false,
+   "salary_max": 125000,
+   "salary_min": 105000,
+   "title": "Junior Data Analyst"
+  },
+  {
+   "company": "North Media",
+   "location": "Toronto",
+   "posted": "2026-10-22",
+   "ref": "JOB-93842",
+   "remote": true,
+   "salary_max": 90000,
+   "salary_min": 50000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "North Media",
+   "location": "Austin",
+   "posted": "2026-10-04",
+   "ref": "JOB-37502",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Copper Media",
+   "location": "Toronto",
+   "posted": "2026-11-01",
+   "ref": "JOB-10352",
+   "remote": false,
+   "salary_max": 65000,
+   "salary_min": 45000,
+   "title": "Data Analyst"
+  },
+  {
+   "company": "Copper Media",
+   "location": "Austin",
+   "posted": "2026-11-04",
+   "ref": "JOB-60269",
+   "remote": true,
+   "salary_max": 90000,
+   "salary_min": 55000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Copper Media",
+   "location": "Berlin",
+   "posted": "2026-10-13",
+   "ref": "JOB-90173",
+   "remote": false,
+   "salary_max": 110000,
+   "salary_min": 80000,
+   "title": "Data Engineer"
+  },
+  {
+   "company": "Copper Media",
+   "location": "Dublin",
+   "posted": "2026-11-10",
+   "ref": "JOB-63735",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Copper Media",
+   "location": "Istanbul",
+   "posted": "2026-11-03",
+   "ref": "JOB-57403",
+   "remote": true,
+   "salary_max": 80000,
+   "salary_min": 70000,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Copper Media",
+   "location": "Dublin",
+   "posted": "2026-10-27",
+   "ref": "JOB-76373",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 95000,
+   "title": "Senior ML Engineer"
+  },
+  {
+   "company": "Copper Finance",
+   "location": "Istanbul",
+   "posted": "2026-10-25",
+   "ref": "JOB-68019",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior QA Engineer"
+  },
+  {
+   "company": "Copper Finance",
+   "location": "Austin",
+   "posted": "2026-10-18",
+   "ref": "JOB-55956",
+   "remote": false,
+   "salary_max": 125000,
+   "salary_min": 85000,
+   "title": "Lead Backend Developer"
+  },
+  {
+   "company": "Copper Finance",
+   "location": "Madrid",
+   "posted": "2026-10-06",
+   "ref": "JOB-74663",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Atlas Labs",
+   "location": "Lisbon",
+   "posted": "2026-10-18",
+   "ref": "JOB-59849",
+   "remote": false,
+   "salary_max": 150000,
+   "salary_min": 105000,
+   "title": "Junior QA Engineer"
+  },
+  {
+   "company": "Atlas Labs",
+   "location": "Austin",
+   "posted": "2026-10-21",
+   "ref": "JOB-81574",
+   "remote": false,
+   "salary_max": 170000,
+   "salary_min": 140000,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Istanbul",
+   "posted": "2026-11-03",
+   "ref": "JOB-56239",
+   "remote": true,
+   "salary_max": 125000,
+   "salary_min": 80000,
+   "title": "Lead Frontend Developer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Madrid",
+   "posted": "2026-11-01",
+   "ref": "JOB-82419",
+   "remote": false,
+   "salary_max": 110000,
+   "salary_min": 90000,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Istanbul",
+   "posted": "2026-10-03",
+   "ref": "JOB-49905",
+   "remote": false,
+   "salary_max": 145000,
+   "salary_min": 115000,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Dublin",
+   "posted": "2026-10-16",
+   "ref": "JOB-37098",
+   "remote": false,
+   "salary_max": 155000,
+   "salary_min": 145000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Lisbon",
+   "posted": "2026-10-21",
+   "ref": "JOB-18262",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior QA Engineer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Lisbon",
+   "posted": "2026-10-11",
+   "ref": "JOB-19589",
+   "remote": true,
+   "salary_max": 105000,
+   "salary_min": 75000,
+   "title": "Junior Backend Developer"
+  },
+  {
+   "company": "Harbor Analytics",
+   "location": "Madrid",
+   "posted": "2026-11-09",
+   "ref": "JOB-56327",
+   "remote": false,
+   "salary_max": 195000,
+   "salary_min": 155000,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Harbor Analytics",
+   "location": "Lisbon",
+   "posted": "2026-11-01",
+   "ref": "JOB-59534",
+   "remote": true,
+   "salary_max": 155000,
+   "salary_min": 140000,
+   "title": "Backend Developer"
+  },
+  {
+   "company": "Harbor Analytics",
+   "location": "Warsaw",
+   "posted": "2026-10-13",
+   "ref": "JOB-55481",
+   "remote": false,
+   "salary_max": 80000,
+   "salary_min": 55000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Harbor Analytics",
+   "location": "Toronto",
+   "posted": "2026-11-09",
+   "ref": "JOB-65640",
+   "remote": false,
+   "salary_max": 170000,
+   "salary_min": 135000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Harbor Analytics",
+   "location": "Berlin",
+   "posted": "2026-10-11",
+   "ref": "JOB-77895",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 60000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Harbor Analytics",
+   "location": "Dublin",
+   "posted": "2026-10-04",
+   "ref": "JOB-54763",
+   "remote": false,
+   "salary_max": 140000,
+   "salary_min": 130000,
+   "title": "Senior Data Analyst"
+  },
+  {
+   "company": "Harbor Foods",
+   "location": "Madrid",
+   "posted": "2026-10-25",
+   "ref": "JOB-88519",
+   "remote": false,
+   "salary_max": 115000,
+   "salary_min": 70000,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Harbor Foods",
+   "location": "Istanbul",
+   "posted": "2026-10-26",
+   "ref": "JOB-11213",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior QA Engineer"
+  },
+  {
+   "company": "Harbor Foods",
+   "location": "Lisbon",
+   "posted": "2026-10-25",
+   "ref": "JOB-81667",
+   "remote": false,
+   "salary_max": 155000,
+   "salary_min": 145000,
+   "title": "Senior QA Engineer"
+  },
+  {
+   "company": "Harbor Foods",
+   "location": "Austin",
+   "posted": "2026-10-21",
+   "ref": "JOB-40850",
+   "remote": true,
+   "salary_max": 165000,
+   "salary_min": 125000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Dublin",
+   "posted": "2026-10-20",
+   "ref": "JOB-61593",
+   "remote": true,
+   "salary_max": 200000,
+   "salary_min": 155000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Warsaw",
+   "posted": "2026-10-08",
+   "ref": "JOB-42609",
+   "remote": true,
+   "salary_max": 120000,
+   "salary_min": 85000,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Lisbon",
+   "posted": "2026-10-20",
+   "ref": "JOB-21095",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Austin",
+   "posted": "2026-10-27",
+   "ref": "JOB-68543",
+   "remote": true,
+   "salary_max": 75000,
+   "salary_min": 40000,
+   "title": "Product Designer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Lisbon",
+   "posted": "2026-11-09",
+   "ref": "JOB-56498",
+   "remote": false,
+   "salary_max": 145000,
+   "salary_min": 125000,
+   "title": "Junior Frontend Developer"
+  }
+ ],
+ "seed": 2,
+ "system": "handwritten",
+ "truth_sha256": "50ccdf18b9217c30838f48022dd55f7b899efa8172e80cc5ce81322ac2c99f6f",
+ "variant": "base",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 3.73
+}

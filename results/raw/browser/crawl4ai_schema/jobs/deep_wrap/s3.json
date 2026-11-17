@@ -1,0 +1,567 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 4,
+  "requests": 4,
+  "seconds": 3.705746291030664
+ },
+ "fetch_mode": "browser",
+ "kind": "jobs",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 0,
+  "cost": 0.0,
+  "input_tokens": 0,
+  "output_tokens": 0,
+  "seconds": 0.0
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 3.706,
+ "page_errors": [],
+ "records": [
+  {
+   "location": "Austin",
+   "posted": "Nov 4, 2026",
+   "ref": "JOB-69137",
+   "remote": "On site",
+   "salary_max": "110,000",
+   "salary_min": "65,000",
+   "title": "Senior Product Designer"
+  },
+  {
+   "location": "Toronto",
+   "posted": "Oct 19, 2026",
+   "ref": "JOB-94488",
+   "remote": "On site",
+   "salary_max": "70,000",
+   "salary_min": "50,000",
+   "title": "Product Designer"
+  },
+  {
+   "location": "Lisbon",
+   "posted": "Oct 30, 2026",
+   "ref": "JOB-83225",
+   "remote": "Remote",
+   "salary_max": "90,000",
+   "salary_min": "50,000",
+   "title": "Support Specialist"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 4, 2026",
+   "ref": "JOB-25222",
+   "remote": "On site",
+   "title": "Senior Data Engineer"
+  },
+  {
+   "location": "Warsaw",
+   "posted": "Oct 27, 2026",
+   "ref": "JOB-45140",
+   "remote": "On site",
+   "salary_max": "135,000",
+   "salary_min": "100,000",
+   "title": "Senior Data Engineer"
+  },
+  {
+   "location": "Madrid",
+   "posted": "Nov 5, 2026",
+   "ref": "JOB-11448",
+   "remote": "On site",
+   "salary_max": "145,000",
+   "salary_min": "120,000",
+   "title": "QA Engineer"
+  },
+  {
+   "location": "Toronto",
+   "posted": "Oct 9, 2026",
+   "ref": "JOB-71423",
+   "remote": "On site",
+   "salary_max": "140,000",
+   "salary_min": "105,000",
+   "title": "QA Engineer"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Oct 7, 2026",
+   "ref": "JOB-13710",
+   "remote": "On site",
+   "salary_max": "140,000",
+   "salary_min": "100,000",
+   "title": "Senior Frontend Developer"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Nov 6, 2026",
+   "ref": "JOB-24077",
+   "remote": "Remote",
+   "salary_max": "125,000",
+   "salary_min": "110,000",
+   "title": "Junior Data Engineer"
+  },
+  {
+   "location": "Warsaw",
+   "posted": "Oct 9, 2026",
+   "ref": "JOB-77831",
+   "remote": "Remote",
+   "salary_max": "110,000",
+   "salary_min": "65,000",
+   "title": "Lead Support Specialist"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 9, 2026",
+   "ref": "JOB-45302",
+   "remote": "Remote",
+   "salary_max": "195,000",
+   "salary_min": "155,000",
+   "title": "Lead Support Specialist"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Nov 4, 2026",
+   "ref": "JOB-36609",
+   "remote": "On site",
+   "salary_max": "75,000",
+   "salary_min": "40,000",
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Oct 10, 2026",
+   "ref": "JOB-91529",
+   "remote": "On site",
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Oct 19, 2026",
+   "ref": "JOB-58897",
+   "remote": "On site",
+   "salary_max": "120,000",
+   "salary_min": "110,000",
+   "title": "Senior Site Reliability Engineer"
+  },
+  {
+   "location": "Madrid",
+   "posted": "Oct 12, 2026",
+   "ref": "JOB-22073",
+   "remote": "On site",
+   "salary_max": "180,000",
+   "salary_min": "155,000",
+   "title": "Technical Writer"
+  },
+  {
+   "location": "Warsaw",
+   "posted": "Oct 4, 2026",
+   "ref": "JOB-98506",
+   "remote": "On site",
+   "salary_max": "185,000",
+   "salary_min": "150,000",
+   "title": "Data Engineer"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Nov 8, 2026",
+   "ref": "JOB-70360",
+   "remote": "On site",
+   "title": "Senior Technical Writer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Nov 10, 2026",
+   "ref": "JOB-78496",
+   "remote": "On site",
+   "salary_max": "170,000",
+   "salary_min": "145,000",
+   "title": "Backend Developer"
+  },
+  {
+   "location": "Madrid",
+   "posted": "Oct 9, 2026",
+   "ref": "JOB-11281",
+   "remote": "Remote",
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Oct 5, 2026",
+   "ref": "JOB-14285",
+   "remote": "Remote",
+   "salary_max": "55,000",
+   "salary_min": "45,000",
+   "title": "Junior QA Engineer"
+  },
+  {
+   "location": "Lisbon",
+   "posted": "Oct 30, 2026",
+   "ref": "JOB-13460",
+   "remote": "Remote",
+   "salary_max": "175,000",
+   "salary_min": "140,000",
+   "title": "Product Designer"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 5, 2026",
+   "ref": "JOB-90635",
+   "remote": "Remote",
+   "salary_max": "130,000",
+   "salary_min": "100,000",
+   "title": "Senior QA Engineer"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 7, 2026",
+   "ref": "JOB-93308",
+   "remote": "On site",
+   "salary_max": "150,000",
+   "salary_min": "120,000",
+   "title": "Lead QA Engineer"
+  },
+  {
+   "location": "Madrid",
+   "posted": "Oct 27, 2026",
+   "ref": "JOB-79176",
+   "remote": "On site",
+   "title": "Junior Data Engineer"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Oct 16, 2026",
+   "ref": "JOB-68162",
+   "remote": "Remote",
+   "salary_max": "95,000",
+   "salary_min": "70,000",
+   "title": "Junior Data Engineer"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 30, 2026",
+   "ref": "JOB-36350",
+   "remote": "Remote",
+   "salary_max": "130,000",
+   "salary_min": "100,000",
+   "title": "Senior Technical Writer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Oct 20, 2026",
+   "ref": "JOB-39641",
+   "remote": "On site",
+   "salary_max": "125,000",
+   "salary_min": "95,000",
+   "title": "Junior Site Reliability Engineer"
+  },
+  {
+   "location": "Lisbon",
+   "posted": "Oct 25, 2026",
+   "ref": "JOB-51703",
+   "remote": "On site",
+   "salary_max": "190,000",
+   "salary_min": "150,000",
+   "title": "Junior Backend Developer"
+  },
+  {
+   "location": "Berlin",
+   "posted": "Oct 26, 2026",
+   "ref": "JOB-15167",
+   "remote": "On site",
+   "salary_max": "65,000",
+   "salary_min": "40,000",
+   "title": "Frontend Developer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Oct 10, 2026",
+   "ref": "JOB-81431",
+   "remote": "On site",
+   "salary_max": "110,000",
+   "salary_min": "90,000",
+   "title": "Senior Backend Developer"
+  },
+  {
+   "location": "Lisbon",
+   "posted": "Oct 5, 2026",
+   "ref": "JOB-28453",
+   "remote": "Remote",
+   "salary_max": "125,000",
+   "salary_min": "115,000",
+   "title": "Lead Data Analyst"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Oct 25, 2026",
+   "ref": "JOB-13793",
+   "remote": "Remote",
+   "salary_max": "140,000",
+   "salary_min": "105,000",
+   "title": "ML Engineer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Oct 15, 2026",
+   "ref": "JOB-30546",
+   "remote": "Remote",
+   "salary_max": "100,000",
+   "salary_min": "90,000",
+   "title": "Data Engineer"
+  },
+  {
+   "location": "Toronto",
+   "posted": "Oct 21, 2026",
+   "ref": "JOB-52845",
+   "remote": "On site",
+   "title": "Senior Product Designer"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 19, 2026",
+   "ref": "JOB-71206",
+   "remote": "On site",
+   "salary_max": "95,000",
+   "salary_min": "80,000",
+   "title": "Lead Support Specialist"
+  },
+  {
+   "location": "Lisbon",
+   "posted": "Nov 4, 2026",
+   "ref": "JOB-22863",
+   "remote": "Remote",
+   "salary_max": "85,000",
+   "salary_min": "50,000",
+   "title": "Lead Support Specialist"
+  },
+  {
+   "location": "Berlin",
+   "posted": "Oct 30, 2026",
+   "ref": "JOB-44799",
+   "remote": "On site",
+   "salary_max": "110,000",
+   "salary_min": "65,000",
+   "title": "ML Engineer"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Nov 6, 2026",
+   "ref": "JOB-19174",
+   "remote": "On site",
+   "title": "Senior QA Engineer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Oct 18, 2026",
+   "ref": "JOB-26663",
+   "remote": "On site",
+   "title": "Senior Technical Writer"
+  },
+  {
+   "location": "Lisbon",
+   "posted": "Nov 10, 2026",
+   "ref": "JOB-70538",
+   "remote": "On site",
+   "salary_max": "85,000",
+   "salary_min": "45,000",
+   "title": "Junior Data Analyst"
+  },
+  {
+   "location": "Madrid",
+   "posted": "Nov 3, 2026",
+   "ref": "JOB-29042",
+   "remote": "On site",
+   "salary_max": "60,000",
+   "salary_min": "45,000",
+   "title": "QA Engineer"
+  },
+  {
+   "location": "Warsaw",
+   "posted": "Oct 30, 2026",
+   "ref": "JOB-51710",
+   "remote": "On site",
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "location": "Toronto",
+   "posted": "Nov 2, 2026",
+   "ref": "JOB-45186",
+   "remote": "On site",
+   "salary_max": "125,000",
+   "salary_min": "110,000",
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "location": "Madrid",
+   "posted": "Oct 31, 2026",
+   "ref": "JOB-26607",
+   "remote": "On site",
+   "title": "Data Analyst"
+  },
+  {
+   "location": "Berlin",
+   "posted": "Oct 12, 2026",
+   "ref": "JOB-33725",
+   "remote": "Remote",
+   "salary_max": "160,000",
+   "salary_min": "145,000",
+   "title": "Lead ML Engineer"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Oct 4, 2026",
+   "ref": "JOB-23958",
+   "remote": "Remote",
+   "salary_max": "110,000",
+   "salary_min": "80,000",
+   "title": "Junior Technical Writer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Oct 3, 2026",
+   "ref": "JOB-56714",
+   "remote": "On site",
+   "title": "Senior ML Engineer"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Nov 4, 2026",
+   "ref": "JOB-30143",
+   "remote": "On site",
+   "salary_max": "105,000",
+   "salary_min": "70,000",
+   "title": "Junior Technical Writer"
+  },
+  {
+   "location": "Toronto",
+   "posted": "Oct 26, 2026",
+   "ref": "JOB-90408",
+   "remote": "On site",
+   "salary_max": "180,000",
+   "salary_min": "135,000",
+   "title": "Senior Frontend Developer"
+  },
+  {
+   "location": "Berlin",
+   "posted": "Oct 4, 2026",
+   "ref": "JOB-88732",
+   "remote": "On site",
+   "salary_max": "100,000",
+   "salary_min": "80,000",
+   "title": "Senior Frontend Developer"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 31, 2026",
+   "ref": "JOB-60108",
+   "remote": "Remote",
+   "title": "Lead Technical Writer"
+  },
+  {
+   "location": "Austin",
+   "posted": "Oct 21, 2026",
+   "ref": "JOB-86888",
+   "remote": "Remote",
+   "title": "Lead Technical Writer"
+  },
+  {
+   "location": "Lisbon",
+   "posted": "Oct 10, 2026",
+   "ref": "JOB-60352",
+   "remote": "On site",
+   "title": "Lead Technical Writer"
+  },
+  {
+   "location": "Warsaw",
+   "posted": "Oct 13, 2026",
+   "ref": "JOB-82832",
+   "remote": "On site",
+   "salary_max": "190,000",
+   "salary_min": "145,000",
+   "title": "Lead Backend Developer"
+  },
+  {
+   "location": "Madrid",
+   "posted": "Oct 8, 2026",
+   "ref": "JOB-32797",
+   "remote": "On site",
+   "salary_max": "195,000",
+   "salary_min": "155,000",
+   "title": "Data Analyst"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 24, 2026",
+   "ref": "JOB-18344",
+   "remote": "On site",
+   "salary_max": "195,000",
+   "salary_min": "155,000",
+   "title": "Support Specialist"
+  },
+  {
+   "location": "Istanbul",
+   "posted": "Nov 7, 2026",
+   "ref": "JOB-60249",
+   "remote": "On site",
+   "salary_max": "85,000",
+   "salary_min": "75,000",
+   "title": "Senior Data Engineer"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 1, 2026",
+   "ref": "JOB-84218",
+   "remote": "Remote",
+   "salary_max": "175,000",
+   "salary_min": "150,000",
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "location": "Madrid",
+   "posted": "Oct 20, 2026",
+   "ref": "JOB-78926",
+   "remote": "On site",
+   "salary_max": "55,000",
+   "salary_min": "40,000",
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "location": "Dublin",
+   "posted": "Oct 5, 2026",
+   "ref": "JOB-62540",
+   "remote": "Remote",
+   "salary_max": "135,000",
+   "salary_min": "115,000",
+   "title": "Lead Data Engineer"
+  },
+  {
+   "location": "Toronto",
+   "posted": "Oct 4, 2026",
+   "ref": "JOB-43860",
+   "remote": "Remote",
+   "salary_max": "95,000",
+   "salary_min": "80,000",
+   "title": "Lead Data Engineer"
+  },
+  {
+   "location": "Lisbon",
+   "posted": "Oct 4, 2026",
+   "ref": "JOB-98767",
+   "remote": "On site",
+   "salary_max": "135,000",
+   "salary_min": "90,000",
+   "title": "Data Analyst"
+  }
+ ],
+ "seed": 3,
+ "system": "crawl4ai_schema",
+ "truth_sha256": "1fb844bf4be7620fc1faa2feb598aa266eb2d0ac50eabb2d7fedd7f3310e82b6",
+ "variant": "deep_wrap",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 3.779
+}

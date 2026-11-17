@@ -1,0 +1,547 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 4,
+  "requests": 4,
+  "seconds": 3.7759374170564115
+ },
+ "fetch_mode": "browser",
+ "kind": "jobs",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 4,
+  "cost": 0.0046785,
+  "input_tokens": 7880,
+  "output_tokens": 7781,
+  "seconds": 23.932744331948925
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 27.709,
+ "page_errors": [],
+ "records": [
+  {
+   "company": "Maple Labs",
+   "location": "Lisbon",
+   "posted": "2026-10-25",
+   "ref": "JOB-97897",
+   "remote": true,
+   "salary_max": 120000,
+   "salary_min": 110000,
+   "title": "Junior QA Engineer"
+  },
+  {
+   "company": "Maple Labs",
+   "location": "Toronto",
+   "posted": "2026-10-27",
+   "ref": "JOB-74197",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 90000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Maple Labs",
+   "location": "Lisbon",
+   "posted": "2026-10-20",
+   "ref": "JOB-86412",
+   "remote": true,
+   "salary_max": 165000,
+   "salary_min": 120000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Maple Labs",
+   "location": "Istanbul",
+   "posted": "2026-10-27",
+   "ref": "JOB-89184",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 90000,
+   "title": "Junior Technical Writer"
+  },
+  {
+   "company": "Maple Labs",
+   "location": "Berlin",
+   "posted": "2026-10-08",
+   "ref": "JOB-47635",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "company": "Silver Robotics",
+   "location": "Dublin",
+   "posted": "2026-10-05",
+   "ref": "JOB-59548",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 55000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Silver Robotics",
+   "location": "Lisbon",
+   "posted": "2026-10-13",
+   "ref": "JOB-92312",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 45000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Silver Robotics",
+   "location": "Lisbon",
+   "posted": "2026-10-29",
+   "ref": "JOB-74530",
+   "remote": false,
+   "salary_max": 140000,
+   "salary_min": 100000,
+   "title": "Lead Backend Developer"
+  },
+  {
+   "company": "Silver Robotics",
+   "location": "Berlin",
+   "posted": "2026-10-19",
+   "ref": "JOB-92501",
+   "remote": false,
+   "salary_max": 125000,
+   "salary_min": 80000,
+   "title": "Lead Frontend Developer"
+  },
+  {
+   "company": "Silver Robotics",
+   "location": "Madrid",
+   "posted": "2026-11-10",
+   "ref": "JOB-10966",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior ML Engineer"
+  },
+  {
+   "company": "Summit Labs",
+   "location": "Warsaw",
+   "posted": "2026-10-09",
+   "ref": "JOB-85855",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Summit Labs",
+   "location": "Austin",
+   "posted": "2026-10-06",
+   "ref": "JOB-65101",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Summit Labs",
+   "location": "Austin",
+   "posted": "2026-10-10",
+   "ref": "JOB-63118",
+   "remote": false,
+   "salary_max": 70000,
+   "salary_min": 40000,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Summit Labs",
+   "location": "Dublin",
+   "posted": "2026-11-01",
+   "ref": "JOB-93288",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior Support Specialist"
+  },
+  {
+   "company": "Summit Labs",
+   "location": "Istanbul",
+   "posted": "2026-10-08",
+   "ref": "JOB-81119",
+   "remote": false,
+   "salary_max": 125000,
+   "salary_min": 115000,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Summit Labs",
+   "location": "Dublin",
+   "posted": "2026-10-29",
+   "ref": "JOB-91727",
+   "remote": false,
+   "salary_max": 105000,
+   "salary_min": 80000,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Austin",
+   "posted": "2026-10-09",
+   "ref": "JOB-36367",
+   "remote": true,
+   "salary_max": 95000,
+   "salary_min": 70000,
+   "title": "Frontend Developer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Dublin",
+   "posted": "2026-10-24",
+   "ref": "JOB-29128",
+   "remote": false,
+   "salary_max": 160000,
+   "salary_min": 145000,
+   "title": "Frontend Developer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Toronto",
+   "posted": "2026-10-15",
+   "ref": "JOB-73674",
+   "remote": true,
+   "salary_max": 155000,
+   "salary_min": 125000,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Berlin",
+   "posted": "2026-11-06",
+   "ref": "JOB-53165",
+   "remote": false,
+   "salary_max": 90000,
+   "salary_min": 80000,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "Maple Foods",
+   "location": "Warsaw",
+   "posted": "2026-11-01",
+   "ref": "JOB-69155",
+   "remote": false,
+   "salary_max": 100000,
+   "salary_min": 65000,
+   "title": "Lead Backend Developer"
+  },
+  {
+   "company": "Maple Foods",
+   "location": "Warsaw",
+   "posted": "2026-10-21",
+   "ref": "JOB-66953",
+   "remote": false,
+   "salary_max": 155000,
+   "salary_min": 135000,
+   "title": "Junior Technical Writer"
+  },
+  {
+   "company": "Maple Foods",
+   "location": "Austin",
+   "posted": "2026-10-27",
+   "ref": "JOB-23213",
+   "remote": true,
+   "salary_max": 130000,
+   "salary_min": 110000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Copper Analytics",
+   "location": "Warsaw",
+   "posted": "2026-11-04",
+   "ref": "JOB-12017",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior Site Reliability Engineer"
+  },
+  {
+   "company": "Copper Analytics",
+   "location": "Istanbul",
+   "posted": "2026-10-19",
+   "ref": "JOB-99770",
+   "remote": true,
+   "salary_max": 90000,
+   "salary_min": 65000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Copper Analytics",
+   "location": "Dublin",
+   "posted": "2026-10-31",
+   "ref": "JOB-38834",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior Frontend Developer"
+  },
+  {
+   "company": "Cedar Labs",
+   "location": "Berlin",
+   "posted": "2026-10-01",
+   "ref": "JOB-67377",
+   "remote": true,
+   "salary_max": 185000,
+   "salary_min": 150000,
+   "title": "Senior Support Specialist"
+  },
+  {
+   "company": "Cedar Labs",
+   "location": "Istanbul",
+   "posted": "2026-10-12",
+   "ref": "JOB-52887",
+   "remote": true,
+   "salary_max": 100000,
+   "salary_min": 70000,
+   "title": "Lead Frontend Developer"
+  },
+  {
+   "company": "Cedar Labs",
+   "location": "Madrid",
+   "posted": "2026-10-10",
+   "ref": "JOB-10967",
+   "remote": false,
+   "salary_max": 55000,
+   "salary_min": 40000,
+   "title": "ML Engineer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Berlin",
+   "posted": "2026-10-12",
+   "ref": "JOB-79349",
+   "remote": false,
+   "salary_max": 155000,
+   "salary_min": 140000,
+   "title": "Backend Developer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Warsaw",
+   "posted": "2026-10-10",
+   "ref": "JOB-51177",
+   "remote": false,
+   "salary_max": 120000,
+   "salary_min": 90000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Austin",
+   "posted": "2026-10-02",
+   "ref": "JOB-80090",
+   "remote": false,
+   "salary_max": 145000,
+   "salary_min": 100000,
+   "title": "Senior Site Reliability Engineer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Toronto",
+   "posted": "2026-11-06",
+   "ref": "JOB-67102",
+   "remote": true,
+   "salary_max": 90000,
+   "salary_min": 45000,
+   "title": "Senior Site Reliability Engineer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Austin",
+   "posted": "2026-10-16",
+   "ref": "JOB-99606",
+   "remote": false,
+   "salary_max": 175000,
+   "salary_min": 150000,
+   "title": "Senior Frontend Developer"
+  },
+  {
+   "company": "Summit Logistics",
+   "location": "Dublin",
+   "posted": "2026-10-27",
+   "ref": "JOB-33832",
+   "remote": true,
+   "salary_max": 130000,
+   "salary_min": 115000,
+   "title": "Junior Product Designer"
+  },
+  {
+   "company": "Summit Logistics",
+   "location": "Dublin",
+   "posted": "2026-10-07",
+   "ref": "JOB-44192",
+   "remote": false,
+   "salary_max": 90000,
+   "salary_min": 70000,
+   "title": "Senior Product Designer"
+  },
+  {
+   "company": "Summit Logistics",
+   "location": "Lisbon",
+   "posted": "2026-10-28",
+   "ref": "JOB-32911",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "Summit Logistics",
+   "location": "Lisbon",
+   "posted": "2026-10-05",
+   "ref": "JOB-30798",
+   "remote": false,
+   "salary_max": 65000,
+   "salary_min": 50000,
+   "title": "QA Engineer"
+  },
+  {
+   "company": "Summit Logistics",
+   "location": "Austin",
+   "posted": "2026-10-11",
+   "ref": "JOB-86612",
+   "remote": false,
+   "salary_max": 185000,
+   "salary_min": 145000,
+   "title": "QA Engineer"
+  },
+  {
+   "company": "Maple Analytics",
+   "location": "Lisbon",
+   "posted": "2026-10-01",
+   "ref": "JOB-50256",
+   "remote": true,
+   "salary_max": 115000,
+   "salary_min": 70000,
+   "title": "Lead QA Engineer"
+  },
+  {
+   "company": "Maple Analytics",
+   "location": "Berlin",
+   "posted": "2026-10-28",
+   "ref": "JOB-96286",
+   "remote": true,
+   "salary_max": 140000,
+   "salary_min": 100000,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Maple Analytics",
+   "location": "Dublin",
+   "posted": "2026-10-22",
+   "ref": "JOB-53436",
+   "remote": false,
+   "salary_max": 105000,
+   "salary_min": 70000,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Harbor Analytics",
+   "location": "Toronto",
+   "posted": "2026-10-22",
+   "ref": "JOB-55554",
+   "remote": false,
+   "salary_max": 95000,
+   "salary_min": 75000,
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "company": "Harbor Analytics",
+   "location": "Berlin",
+   "posted": "2026-11-09",
+   "ref": "JOB-85122",
+   "remote": true,
+   "salary_max": 115000,
+   "salary_min": 100000,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Cedar Media",
+   "location": "Dublin",
+   "posted": "2026-10-23",
+   "ref": "JOB-42731",
+   "remote": true,
+   "salary_max": 125000,
+   "salary_min": 90000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Cedar Media",
+   "location": "Warsaw",
+   "posted": "2026-10-19",
+   "ref": "JOB-35928",
+   "remote": false,
+   "salary_max": 165000,
+   "salary_min": 120000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Cedar Media",
+   "location": "Lisbon",
+   "posted": "2026-10-30",
+   "ref": "JOB-71090",
+   "remote": false,
+   "salary_max": 195000,
+   "salary_min": 155000,
+   "title": "Lead Frontend Developer"
+  },
+  {
+   "company": "Cedar Media",
+   "location": "Warsaw",
+   "posted": "2026-10-31",
+   "ref": "JOB-75143",
+   "remote": true,
+   "salary_max": 115000,
+   "salary_min": 100000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Cedar Media",
+   "location": "Dublin",
+   "posted": "2026-10-02",
+   "ref": "JOB-34663",
+   "remote": false,
+   "salary_max": 155000,
+   "salary_min": 140000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Cedar Media",
+   "location": "Istanbul",
+   "posted": "2026-11-01",
+   "ref": "JOB-92340",
+   "remote": false,
+   "salary_max": 165000,
+   "salary_min": 140000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Cedar Media",
+   "location": "Warsaw",
+   "posted": "2026-10-30",
+   "ref": "JOB-81606",
+   "remote": false,
+   "salary_max": 90000,
+   "salary_min": 75000,
+   "title": "Frontend Developer"
+  }
+ ],
+ "seed": 4,
+ "system": "scrapegraph",
+ "truth_sha256": "d5f82765824e64c6e344170f26592af4c43132d4f01e1e519d4f6a7a984b0af5",
+ "variant": "layout_b",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 27.725
+}

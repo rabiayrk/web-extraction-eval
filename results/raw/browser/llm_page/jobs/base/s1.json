@@ -1,0 +1,547 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 4,
+  "requests": 4,
+  "seconds": 3.8504463749704883
+ },
+ "fetch_mode": "browser",
+ "kind": "jobs",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 4,
+  "cost": 0.0030768,
+  "input_tokens": 9133,
+  "output_tokens": 4327,
+  "seconds": 16.180764248943888
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 20.031,
+ "page_errors": [],
+ "records": [
+  {
+   "company": "Copper Energy",
+   "location": "Warsaw",
+   "posted": "2026-11-01",
+   "ref": "JOB-28513",
+   "remote": true,
+   "salary_max": 170000,
+   "salary_min": 130000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Copper Energy",
+   "location": "Austin",
+   "posted": "2026-11-03",
+   "ref": "JOB-74878",
+   "remote": false,
+   "salary_max": 90000,
+   "salary_min": 65000,
+   "title": "Lead Frontend Developer"
+  },
+  {
+   "company": "Copper Energy",
+   "location": "Dublin",
+   "posted": "2026-10-25",
+   "ref": "JOB-19159",
+   "remote": false,
+   "salary_max": 95000,
+   "salary_min": 55000,
+   "title": "Lead Frontend Developer"
+  },
+  {
+   "company": "Copper Energy",
+   "location": "Dublin",
+   "posted": "2026-11-05",
+   "ref": "JOB-96889",
+   "remote": true,
+   "salary_max": 135000,
+   "salary_min": 100000,
+   "title": "Senior Product Designer"
+  },
+  {
+   "company": "Quiet Logistics",
+   "location": "Toronto",
+   "posted": "2026-10-09",
+   "ref": "JOB-50809",
+   "remote": false,
+   "salary_max": 170000,
+   "salary_min": 155000,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Quiet Logistics",
+   "location": "Lisbon",
+   "posted": "2026-10-07",
+   "ref": "JOB-12664",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior Support Specialist"
+  },
+  {
+   "company": "Quiet Logistics",
+   "location": "Madrid",
+   "posted": "2026-10-26",
+   "ref": "JOB-67060",
+   "remote": false,
+   "salary_max": 130000,
+   "salary_min": 120000,
+   "title": "Junior Backend Developer"
+  },
+  {
+   "company": "Quiet Logistics",
+   "location": "Madrid",
+   "posted": "2026-10-02",
+   "ref": "JOB-60565",
+   "remote": false,
+   "salary_max": 90000,
+   "salary_min": 65000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Quiet Logistics",
+   "location": "Berlin",
+   "posted": "2026-10-13",
+   "ref": "JOB-94566",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Data Engineer"
+  },
+  {
+   "company": "Atlas Robotics",
+   "location": "Toronto",
+   "posted": "2026-10-08",
+   "ref": "JOB-33765",
+   "remote": false,
+   "salary_max": 110000,
+   "salary_min": 75000,
+   "title": "Lead Support Specialist"
+  },
+  {
+   "company": "Atlas Robotics",
+   "location": "Istanbul",
+   "posted": "2026-10-26",
+   "ref": "JOB-17397",
+   "remote": true,
+   "salary_max": 120000,
+   "salary_min": 80000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Atlas Robotics",
+   "location": "Warsaw",
+   "posted": "2026-11-04",
+   "ref": "JOB-68192",
+   "remote": false,
+   "salary_max": 145000,
+   "salary_min": 110000,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Atlas Robotics",
+   "location": "Lisbon",
+   "posted": "2026-11-07",
+   "ref": "JOB-91981",
+   "remote": true,
+   "salary_max": 155000,
+   "salary_min": 120000,
+   "title": "Product Designer"
+  },
+  {
+   "company": "Atlas Robotics",
+   "location": "Austin",
+   "posted": "2026-10-30",
+   "ref": "JOB-99689",
+   "remote": false,
+   "salary_max": 70000,
+   "salary_min": 60000,
+   "title": "Junior QA Engineer"
+  },
+  {
+   "company": "Atlas Robotics",
+   "location": "Warsaw",
+   "posted": "2026-10-31",
+   "ref": "JOB-96522",
+   "remote": true,
+   "salary_max": 175000,
+   "salary_min": 155000,
+   "title": "Junior QA Engineer"
+  },
+  {
+   "company": "Maple Foods",
+   "location": "Lisbon",
+   "posted": "2026-10-14",
+   "ref": "JOB-39486",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Support Specialist"
+  },
+  {
+   "company": "Maple Foods",
+   "location": "Berlin",
+   "posted": "2026-10-29",
+   "ref": "JOB-30307",
+   "remote": true,
+   "salary_max": 115000,
+   "salary_min": 80000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Maple Foods",
+   "location": "Madrid",
+   "posted": "2026-11-03",
+   "ref": "JOB-12003",
+   "remote": true,
+   "salary_max": 100000,
+   "salary_min": 90000,
+   "title": "Junior Site Reliability Engineer"
+  },
+  {
+   "company": "Maple Robotics",
+   "location": "Dublin",
+   "posted": "2026-10-11",
+   "ref": "JOB-83120",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "QA Engineer"
+  },
+  {
+   "company": "Maple Robotics",
+   "location": "Austin",
+   "posted": "2026-10-18",
+   "ref": "JOB-95283",
+   "remote": false,
+   "salary_max": 195000,
+   "salary_min": 150000,
+   "title": "ML Engineer"
+  },
+  {
+   "company": "Maple Robotics",
+   "location": "Madrid",
+   "posted": "2026-11-05",
+   "ref": "JOB-38363",
+   "remote": false,
+   "salary_max": 190000,
+   "salary_min": 155000,
+   "title": "Senior Site Reliability Engineer"
+  },
+  {
+   "company": "Maple Robotics",
+   "location": "Berlin",
+   "posted": "2026-10-10",
+   "ref": "JOB-51359",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead QA Engineer"
+  },
+  {
+   "company": "Maple Robotics",
+   "location": "Dublin",
+   "posted": "2026-10-18",
+   "ref": "JOB-19286",
+   "remote": true,
+   "salary_max": 130000,
+   "salary_min": 115000,
+   "title": "Lead QA Engineer"
+  },
+  {
+   "company": "Cedar Health",
+   "location": "Madrid",
+   "posted": "2026-11-04",
+   "ref": "JOB-60265",
+   "remote": false,
+   "salary_max": 140000,
+   "salary_min": 125000,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Cedar Health",
+   "location": "Lisbon",
+   "posted": "2026-10-16",
+   "ref": "JOB-78316",
+   "remote": true,
+   "salary_max": 150000,
+   "salary_min": 115000,
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "company": "Cedar Health",
+   "location": "Warsaw",
+   "posted": "2026-11-07",
+   "ref": "JOB-85735",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Product Designer"
+  },
+  {
+   "company": "Silver Labs",
+   "location": "Dublin",
+   "posted": "2026-10-09",
+   "ref": "JOB-97351",
+   "remote": false,
+   "salary_max": 150000,
+   "salary_min": 105000,
+   "title": "Junior QA Engineer"
+  },
+  {
+   "company": "Silver Labs",
+   "location": "Madrid",
+   "posted": "2026-10-21",
+   "ref": "JOB-53076",
+   "remote": true,
+   "salary_max": 175000,
+   "salary_min": 140000,
+   "title": "Junior Frontend Developer"
+  },
+  {
+   "company": "Silver Labs",
+   "location": "Madrid",
+   "posted": "2026-10-07",
+   "ref": "JOB-41566",
+   "remote": true,
+   "salary_max": 150000,
+   "salary_min": 130000,
+   "title": "Frontend Developer"
+  },
+  {
+   "company": "Atlas Finance",
+   "location": "Berlin",
+   "posted": "2026-10-26",
+   "ref": "JOB-41846",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Atlas Finance",
+   "location": "Madrid",
+   "posted": "2026-10-23",
+   "ref": "JOB-91995",
+   "remote": false,
+   "salary_max": 145000,
+   "salary_min": 110000,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Atlas Finance",
+   "location": "Warsaw",
+   "posted": "2026-10-06",
+   "ref": "JOB-60114",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 125000,
+   "title": "Lead Backend Developer"
+  },
+  {
+   "company": "Atlas Finance",
+   "location": "Warsaw",
+   "posted": "2026-10-31",
+   "ref": "JOB-12753",
+   "remote": false,
+   "salary_max": 115000,
+   "salary_min": 85000,
+   "title": "Product Designer"
+  },
+  {
+   "company": "Cedar Robotics",
+   "location": "Dublin",
+   "posted": "2026-10-18",
+   "ref": "JOB-91276",
+   "remote": false,
+   "salary_max": 105000,
+   "salary_min": 70000,
+   "title": "Senior ML Engineer"
+  },
+  {
+   "company": "Cedar Robotics",
+   "location": "Warsaw",
+   "posted": "2026-10-02",
+   "ref": "JOB-77437",
+   "remote": true,
+   "salary_max": 165000,
+   "salary_min": 140000,
+   "title": "ML Engineer"
+  },
+  {
+   "company": "Cedar Robotics",
+   "location": "Dublin",
+   "posted": "2026-10-17",
+   "ref": "JOB-56429",
+   "remote": true,
+   "salary_max": 65000,
+   "salary_min": 50000,
+   "title": "Senior Product Designer"
+  },
+  {
+   "company": "Cedar Robotics",
+   "location": "Warsaw",
+   "posted": "2026-11-06",
+   "ref": "JOB-81696",
+   "remote": true,
+   "salary_max": 85000,
+   "salary_min": 75000,
+   "title": "Senior Product Designer"
+  },
+  {
+   "company": "Cedar Robotics",
+   "location": "Berlin",
+   "posted": "2026-10-08",
+   "ref": "JOB-36293",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior QA Engineer"
+  },
+  {
+   "company": "North Logistics",
+   "location": "Toronto",
+   "posted": "2026-11-06",
+   "ref": "JOB-52586",
+   "remote": false,
+   "salary_max": 105000,
+   "salary_min": 85000,
+   "title": "Backend Developer"
+  },
+  {
+   "company": "North Logistics",
+   "location": "Madrid",
+   "posted": "2026-10-03",
+   "ref": "JOB-27969",
+   "remote": false,
+   "salary_max": 100000,
+   "salary_min": 55000,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "North Logistics",
+   "location": "Warsaw",
+   "posted": "2026-10-25",
+   "ref": "JOB-32614",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "North Logistics",
+   "location": "Austin",
+   "posted": "2026-10-23",
+   "ref": "JOB-49610",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 125000,
+   "title": "Senior Backend Developer"
+  },
+  {
+   "company": "Maple Media",
+   "location": "Warsaw",
+   "posted": "2026-10-14",
+   "ref": "JOB-29691",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 125000,
+   "title": "Product Designer"
+  },
+  {
+   "company": "Maple Media",
+   "location": "Madrid",
+   "posted": "2026-10-19",
+   "ref": "JOB-51945",
+   "remote": true,
+   "salary_max": 85000,
+   "salary_min": 40000,
+   "title": "Senior Site Reliability Engineer"
+  },
+  {
+   "company": "Maple Media",
+   "location": "Istanbul",
+   "posted": "2026-10-27",
+   "ref": "JOB-76217",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 100000,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Maple Media",
+   "location": "Istanbul",
+   "posted": "2026-10-20",
+   "ref": "JOB-66965",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Copper Systems",
+   "location": "Istanbul",
+   "posted": "2026-10-29",
+   "ref": "JOB-87581",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 75000,
+   "title": "Junior Site Reliability Engineer"
+  },
+  {
+   "company": "Copper Systems",
+   "location": "Berlin",
+   "posted": "2026-10-15",
+   "ref": "JOB-50448",
+   "remote": false,
+   "salary_max": 145000,
+   "salary_min": 100000,
+   "title": "Lead Product Designer"
+  },
+  {
+   "company": "Copper Systems",
+   "location": "Toronto",
+   "posted": "2026-10-29",
+   "ref": "JOB-98299",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Product Designer"
+  },
+  {
+   "company": "Copper Systems",
+   "location": "Warsaw",
+   "posted": "2026-10-09",
+   "ref": "JOB-26366",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "Copper Systems",
+   "location": "Austin",
+   "posted": "2026-10-09",
+   "ref": "JOB-44493",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Support Specialist"
+  }
+ ],
+ "seed": 1,
+ "system": "llm_page",
+ "truth_sha256": "4da21beea0dac2af4c0eee8e8d5a8906afdfd4217b9ade368cd56d9d0ba0fa38",
+ "variant": "base",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 20.045
+}

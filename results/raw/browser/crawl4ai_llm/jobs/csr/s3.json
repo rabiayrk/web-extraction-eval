@@ -1,0 +1,657 @@
+{
+ "effort": "model default",
+ "error": null,
+ "fetch": {
+  "pages": 4,
+  "requests": 8,
+  "seconds": 3.845818668080028
+ },
+ "fetch_mode": "browser",
+ "kind": "jobs",
+ "llm": {
+  "cached_calls": 0,
+  "calls": 4,
+  "cost": 0.0060263,
+  "input_tokens": 8508,
+  "output_tokens": 10351,
+  "seconds": 31.915876999904867
+ },
+ "model": "claude-haiku-5-5",
+ "nominal_seconds": 35.762,
+ "page_errors": [],
+ "records": [
+  {
+   "company": "Maple Finance",
+   "location": "Austin",
+   "posted": "2026-11-04",
+   "ref": "JOB-69137",
+   "remote": false,
+   "salary_max": 110000,
+   "salary_min": 65000,
+   "title": "Senior Product Designer"
+  },
+  {
+   "company": "Maple Finance",
+   "location": "Toronto",
+   "posted": "2026-10-19",
+   "ref": "JOB-94488",
+   "remote": false,
+   "salary_max": 70000,
+   "salary_min": 50000,
+   "title": "Product Designer"
+  },
+  {
+   "company": "Maple Finance",
+   "location": "Lisbon",
+   "posted": "2026-10-30",
+   "ref": "JOB-83225",
+   "remote": true,
+   "salary_max": 90000,
+   "salary_min": 50000,
+   "title": "Support Specialist"
+  },
+  {
+   "company": "Maple Finance",
+   "location": "Dublin",
+   "posted": "2026-10-04",
+   "ref": "JOB-25222",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Maple Finance",
+   "location": "Warsaw",
+   "posted": "2026-10-27",
+   "ref": "JOB-45140",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 100000,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Maple Finance",
+   "location": "Madrid",
+   "posted": "2026-11-05",
+   "ref": "JOB-11448",
+   "remote": false,
+   "salary_max": 145000,
+   "salary_min": 120000,
+   "title": "QA Engineer"
+  },
+  {
+   "company": "Maple Finance",
+   "location": "Toronto",
+   "posted": "2026-10-09",
+   "ref": "JOB-71423",
+   "remote": false,
+   "salary_max": 140000,
+   "salary_min": 105000,
+   "title": "QA Engineer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Istanbul",
+   "posted": "2026-10-07",
+   "ref": "JOB-13710",
+   "remote": false,
+   "salary_max": 140000,
+   "salary_min": 100000,
+   "title": "Senior Frontend Developer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Dublin",
+   "posted": "2026-11-06",
+   "ref": "JOB-24077",
+   "remote": true,
+   "salary_max": 125000,
+   "salary_min": 110000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Warsaw",
+   "posted": "2026-10-09",
+   "ref": "JOB-77831",
+   "remote": true,
+   "salary_max": 110000,
+   "salary_min": 65000,
+   "title": "Lead Support Specialist"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Dublin",
+   "posted": "2026-10-09",
+   "ref": "JOB-45302",
+   "remote": true,
+   "salary_max": 195000,
+   "salary_min": 155000,
+   "title": "Lead Support Specialist"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Dublin",
+   "posted": "2026-11-04",
+   "ref": "JOB-36609",
+   "remote": false,
+   "salary_max": 75000,
+   "salary_min": 40000,
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "company": "Quiet Analytics",
+   "location": "Istanbul",
+   "posted": "2026-10-10",
+   "ref": "JOB-91529",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "company": "Cedar Finance",
+   "location": "Austin",
+   "posted": "2026-10-19",
+   "ref": "JOB-58897",
+   "remote": false,
+   "salary_max": 120000,
+   "salary_min": 110000,
+   "title": "Senior Site Reliability Engineer"
+  },
+  {
+   "company": "Cedar Finance",
+   "location": "Madrid",
+   "posted": "2026-10-12",
+   "ref": "JOB-22073",
+   "remote": false,
+   "salary_max": 180000,
+   "salary_min": 155000,
+   "title": "Technical Writer"
+  },
+  {
+   "company": "Cedar Finance",
+   "location": "Warsaw",
+   "posted": "2026-10-04",
+   "ref": "JOB-98506",
+   "remote": false,
+   "salary_max": 185000,
+   "salary_min": 150000,
+   "title": "Data Engineer"
+  },
+  {
+   "company": "Cedar Finance",
+   "location": "Istanbul",
+   "posted": "2026-11-08",
+   "ref": "JOB-70360",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Austin",
+   "posted": "2026-11-10",
+   "ref": "JOB-78496",
+   "remote": false,
+   "salary_max": 170000,
+   "salary_min": 145000,
+   "title": "Backend Developer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Madrid",
+   "posted": "2026-10-09",
+   "ref": "JOB-11281",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Austin",
+   "posted": "2026-10-05",
+   "ref": "JOB-14285",
+   "remote": true,
+   "salary_max": 55000,
+   "salary_min": 45000,
+   "title": "Junior QA Engineer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Lisbon",
+   "posted": "2026-10-30",
+   "ref": "JOB-13460",
+   "remote": true,
+   "salary_max": 175000,
+   "salary_min": 140000,
+   "title": "Product Designer"
+  },
+  {
+   "company": "Harbor Energy",
+   "location": "Dublin",
+   "posted": "2026-10-05",
+   "ref": "JOB-90635",
+   "remote": true,
+   "salary_max": 130000,
+   "salary_min": 100000,
+   "title": "Senior QA Engineer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Dublin",
+   "posted": "2026-10-07",
+   "ref": "JOB-93308",
+   "remote": false,
+   "salary_max": 150000,
+   "salary_min": 120000,
+   "title": "Lead QA Engineer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Madrid",
+   "posted": "2026-10-27",
+   "ref": "JOB-79176",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Istanbul",
+   "posted": "2026-10-16",
+   "ref": "JOB-68162",
+   "remote": true,
+   "salary_max": 95000,
+   "salary_min": 70000,
+   "title": "Junior Data Engineer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Dublin",
+   "posted": "2026-10-30",
+   "ref": "JOB-36350",
+   "remote": true,
+   "salary_max": 130000,
+   "salary_min": 100000,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Austin",
+   "posted": "2026-10-20",
+   "ref": "JOB-39641",
+   "remote": false,
+   "salary_max": 125000,
+   "salary_min": 95000,
+   "title": "Junior Site Reliability Engineer"
+  },
+  {
+   "company": "Atlas Energy",
+   "location": "Lisbon",
+   "posted": "2026-10-25",
+   "ref": "JOB-51703",
+   "remote": false,
+   "salary_max": 190000,
+   "salary_min": 150000,
+   "title": "Junior Backend Developer"
+  },
+  {
+   "company": "Silver Analytics",
+   "location": "Berlin",
+   "posted": "2026-10-26",
+   "ref": "JOB-15167",
+   "remote": false,
+   "salary_max": 65000,
+   "salary_min": 40000,
+   "title": "Frontend Developer"
+  },
+  {
+   "company": "Silver Analytics",
+   "location": "Austin",
+   "posted": "2026-10-10",
+   "ref": "JOB-81431",
+   "remote": false,
+   "salary_max": 110000,
+   "salary_min": 90000,
+   "title": "Senior Backend Developer"
+  },
+  {
+   "company": "Silver Analytics",
+   "location": "Lisbon",
+   "posted": "2026-10-05",
+   "ref": "JOB-28453",
+   "remote": true,
+   "salary_max": 125000,
+   "salary_min": 115000,
+   "title": "Lead Data Analyst"
+  },
+  {
+   "company": "Silver Analytics",
+   "location": "Istanbul",
+   "posted": "2026-10-25",
+   "ref": "JOB-13793",
+   "remote": true,
+   "salary_max": 140000,
+   "salary_min": 105000,
+   "title": "ML Engineer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Austin",
+   "posted": "2026-10-15",
+   "ref": "JOB-30546",
+   "remote": true,
+   "salary_max": 100000,
+   "salary_min": 90000,
+   "title": "Data Engineer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Toronto",
+   "posted": "2026-10-21",
+   "ref": "JOB-52845",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Product Designer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Dublin",
+   "posted": "2026-10-19",
+   "ref": "JOB-71206",
+   "remote": false,
+   "salary_max": 95000,
+   "salary_min": 80000,
+   "title": "Lead Support Specialist"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Lisbon",
+   "posted": "2026-11-04",
+   "ref": "JOB-22863",
+   "remote": true,
+   "salary_max": 85000,
+   "salary_min": 50000,
+   "title": "Lead Support Specialist"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Berlin",
+   "posted": "2026-10-30",
+   "ref": "JOB-44799",
+   "remote": false,
+   "salary_max": 110000,
+   "salary_min": 65000,
+   "title": "ML Engineer"
+  },
+  {
+   "company": "Harbor Robotics",
+   "location": "Istanbul",
+   "posted": "2026-11-06",
+   "ref": "JOB-19174",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior QA Engineer"
+  },
+  {
+   "company": "Silver Finance",
+   "location": "Austin",
+   "posted": "2026-10-18",
+   "ref": "JOB-26663",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior Technical Writer"
+  },
+  {
+   "company": "Silver Finance",
+   "location": "Lisbon",
+   "posted": "2026-11-10",
+   "ref": "JOB-70538",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 45000,
+   "title": "Junior Data Analyst"
+  },
+  {
+   "company": "Silver Finance",
+   "location": "Madrid",
+   "posted": "2026-11-03",
+   "ref": "JOB-29042",
+   "remote": false,
+   "salary_max": 60000,
+   "salary_min": 45000,
+   "title": "QA Engineer"
+  },
+  {
+   "company": "Silver Finance",
+   "location": "Warsaw",
+   "posted": "2026-10-30",
+   "ref": "JOB-51710",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "company": "Silver Finance",
+   "location": "Toronto",
+   "posted": "2026-11-02",
+   "ref": "JOB-45186",
+   "remote": false,
+   "salary_max": 125000,
+   "salary_min": 110000,
+   "title": "Site Reliability Engineer"
+  },
+  {
+   "company": "Bright Systems",
+   "location": "Madrid",
+   "posted": "2026-10-31",
+   "ref": "JOB-26607",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Data Analyst"
+  },
+  {
+   "company": "Bright Systems",
+   "location": "Berlin",
+   "posted": "2026-10-12",
+   "ref": "JOB-33725",
+   "remote": true,
+   "salary_max": 160000,
+   "salary_min": 145000,
+   "title": "Lead ML Engineer"
+  },
+  {
+   "company": "Bright Systems",
+   "location": "Istanbul",
+   "posted": "2026-10-04",
+   "ref": "JOB-23958",
+   "remote": true,
+   "salary_max": 110000,
+   "salary_min": 80000,
+   "title": "Junior Technical Writer"
+  },
+  {
+   "company": "Bright Systems",
+   "location": "Austin",
+   "posted": "2026-10-03",
+   "ref": "JOB-56714",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Senior ML Engineer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Istanbul",
+   "posted": "2026-11-04",
+   "ref": "JOB-30143",
+   "remote": false,
+   "salary_max": 105000,
+   "salary_min": 70000,
+   "title": "Junior Technical Writer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Toronto",
+   "posted": "2026-10-26",
+   "ref": "JOB-90408",
+   "remote": false,
+   "salary_max": 180000,
+   "salary_min": 135000,
+   "title": "Senior Frontend Developer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Berlin",
+   "posted": "2026-10-04",
+   "ref": "JOB-88732",
+   "remote": false,
+   "salary_max": 100000,
+   "salary_min": 80000,
+   "title": "Senior Frontend Developer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Dublin",
+   "posted": "2026-10-31",
+   "ref": "JOB-60108",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Austin",
+   "posted": "2026-10-21",
+   "ref": "JOB-86888",
+   "remote": true,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Blue Logistics",
+   "location": "Lisbon",
+   "posted": "2026-10-10",
+   "ref": "JOB-60352",
+   "remote": false,
+   "salary_max": null,
+   "salary_min": null,
+   "title": "Lead Technical Writer"
+  },
+  {
+   "company": "Bright Media",
+   "location": "Warsaw",
+   "posted": "2026-10-13",
+   "ref": "JOB-82832",
+   "remote": false,
+   "salary_max": 190000,
+   "salary_min": 145000,
+   "title": "Lead Backend Developer"
+  },
+  {
+   "company": "Bright Media",
+   "location": "Madrid",
+   "posted": "2026-10-08",
+   "ref": "JOB-32797",
+   "remote": false,
+   "salary_max": 195000,
+   "salary_min": 155000,
+   "title": "Data Analyst"
+  },
+  {
+   "company": "Bright Media",
+   "location": "Dublin",
+   "posted": "2026-10-24",
+   "ref": "JOB-18344",
+   "remote": false,
+   "salary_max": 195000,
+   "salary_min": 155000,
+   "title": "Support Specialist"
+  },
+  {
+   "company": "Bright Media",
+   "location": "Istanbul",
+   "posted": "2026-11-07",
+   "ref": "JOB-60249",
+   "remote": false,
+   "salary_max": 85000,
+   "salary_min": 75000,
+   "title": "Senior Data Engineer"
+  },
+  {
+   "company": "Bright Media",
+   "location": "Dublin",
+   "posted": "2026-10-01",
+   "ref": "JOB-84218",
+   "remote": true,
+   "salary_max": 175000,
+   "salary_min": 150000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Bright Media",
+   "location": "Madrid",
+   "posted": "2026-10-20",
+   "ref": "JOB-78926",
+   "remote": false,
+   "salary_max": 55000,
+   "salary_min": 40000,
+   "title": "Lead Site Reliability Engineer"
+  },
+  {
+   "company": "Atlas Labs",
+   "location": "Dublin",
+   "posted": "2026-10-05",
+   "ref": "JOB-62540",
+   "remote": true,
+   "salary_max": 135000,
+   "salary_min": 115000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Atlas Labs",
+   "location": "Toronto",
+   "posted": "2026-10-04",
+   "ref": "JOB-43860",
+   "remote": true,
+   "salary_max": 95000,
+   "salary_min": 80000,
+   "title": "Lead Data Engineer"
+  },
+  {
+   "company": "Atlas Labs",
+   "location": "Lisbon",
+   "posted": "2026-10-04",
+   "ref": "JOB-98767",
+   "remote": false,
+   "salary_max": 135000,
+   "salary_min": 90000,
+   "title": "Data Analyst"
+  }
+ ],
+ "seed": 3,
+ "system": "crawl4ai_llm",
+ "truth_sha256": "09832a1002ed4ece9e48f92b90a162e9b7f35aec6ca829f3fd760171789dc96e",
+ "variant": "csr",
+ "versions": {
+  "anthropic": "2.8.0",
+  "crawl4ai": "0.9.5",
+  "langchain-anthropic": "1.7.10",
+  "parsel": "1.12.1",
+  "playwright": "1.65.2",
+  "scrapegraphai": "2.3.1"
+ },
+ "wall_seconds": 35.803
+}
