@@ -30,7 +30,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def sanity(build: Path) -> str:
     """Metric checks on ground truth itself: perfect, shuffled values, empty output."""
-    rows = {"perfect": [], "shuffled": [], "empty": []}
+    rows: dict[str, list[float]] = {"perfect": [], "shuffled": [], "empty": []}
     rng = random.Random(0)
     for path in sorted((build / "truth").glob("*/*/s[1-9]*.json")):
         t = json.loads(path.read_text())
