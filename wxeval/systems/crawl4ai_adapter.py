@@ -17,6 +17,7 @@ import os
 import time
 from importlib import metadata
 from typing import Any
+from urllib.parse import urlsplit, urlunsplit
 
 from ..llm import MODEL, DiskCache, price
 from .base import Context, System, Task, crawl
@@ -25,6 +26,16 @@ PROVIDER = f"anthropic/{MODEL}"
 # crawl4ai sends temperature=0.01 by default, which Haiku 5.5 rejects with a 400.
 # None makes litellm leave the field out.
 EXTRA_ARGS: dict[str, Any] = {"temperature": None, "max_tokens": 16000}
+# crawl4ai puts the page URL into the prompt. A fixed host keeps the prompt the same
+# whatever port the local server uses; next links are moved back to the real port.
+CANONICAL_NETLOC = "127.0.0.1:8765"
+
+
+def canonical_url(url: str) -> str:
+    parts = urlsplit(url)
+    if parts.hostname not in ("127.0.0.1", "localhost"):
+        return url
+    return urlunsplit((parts.scheme, CANONICAL_NETLOC, parts.path, parts.query, ""))
 
 
 def _llm_config() -> Any:
@@ -57,9 +68,12 @@ class Crawl4AIPerPage(System):
         def page(html: str, url: str) -> tuple[list[dict[str, Any]], str | None]:
             # No base URL: links stay relative, so the server port does not change the input.
             md = markdown.generate_markdown(html, base_url="").raw_markdown
+            page_url = canonical_url(url)
+            # The URL is part of the prompt, so it is part of the key. Without it, two
+            # variants with the same page share one answer and its absolute next link.
             key = DiskCache.key({"tool": "crawl4ai_llm", "version": metadata.version("crawl4ai"),
-                                 "model": MODEL, "input": md, "instruction": instruction,
-                                 "schema": schema})
+                                 "model": MODEL, "url": page_url, "input": md,
+                                 "instruction": instruction, "schema": schema})
             hit = cache.get(key)
             if hit is None:
                 ctx.ledger.check(price(MODEL, len(md) // 3, 4000))
@@ -67,7 +81,7 @@ class Crawl4AIPerPage(System):
                     llm_config=_llm_config(), schema=schema, extraction_type="schema",
                     instruction=instruction, apply_chunking=False, extra_args=EXTRA_ARGS)
                 start = time.perf_counter()
-                blocks = strategy.run(url, [md])
+                blocks = strategy.run(page_url, [md])
                 usage = strategy.total_usage
                 hit = {"blocks": blocks, "in": usage.prompt_tokens,
                        "out": usage.completion_tokens, "seconds": time.perf_counter() - start}
